@@ -7,7 +7,7 @@ GUID={5A3F8E6F-99AE-07BB-8D3F-A97A8092CDA1}
 CompanyName=T2K
 WebSite=www.timetoknow.com
 SupportLink=www.timetoknow.com
-SetupFile=C:\Users\alex.zaikman\Desktop\cgs client\CGSClient\setup-cgs.exe
+SetupFile=C:\Users\alex.zaikman\Desktop\cgs_client\CGSClient\setup-cgs.exe
 CompressionType=2
 WizardBitmap=C:\Program Files (x86)\Actual Installer\Bitmaps\Wizard\02.bmp
 HeaderBitmap=C:\Program Files (x86)\Actual Installer\Bitmaps\Header\07.bmp
@@ -45,8 +45,8 @@ LinkSQL=http://www.microsoft.com/en-us/download/details.aspx?id=5783
 SQLE=0
 SQLEVersion=0
 LinkSQLE=http://www.microsoft.com/en-us/download/details.aspx?id=30438
-InstallationPath=<CommonAppData>\<CompanyName>\<AppName>
-SourceFolder=C:\Users\alex.zaikman\Desktop\cgs client\CGSClient\cgsClient
+InstallationPath=<AppData>\<AppName>
+SourceFolder=C:\Users\alex.zaikman\Desktop\cgs_client\CGSClient\cgsClient
 MainExecutable=<InstallDir>\cgs.exe
 ExistMode=1
 NotRemove=0
@@ -111,4 +111,4 @@ English=
 [Shortcuts]
 0=<ProgramGroup>*?Uninstall <AppName>*?<InstallDir>\Uninstall.exe*?*?*?<InstallDir>*?<InstallDir>\res\2785970.png*?0*?Normal
 1=<ProgramGroup>*?<AppName>*?<InstallDir>\cgs.exe*?*?*?<InstallDir>*?<InstallDir>\res\CGS ico.png*?0*?Normal
-2=<CommonDesktop>*?<AppName>*?<InstallDir>\cgs.exe*?*?*?<InstallDir>*?<InstallDir>\res\CGS ico.ico*?0*?Normal
+2=<CommonDesktop>*?<AppName>*?<InstallDir>\cgs.exe*?*?*?<InstallDir>*?<InstallDir>\res\cgsClient.png*?0*?Normal
