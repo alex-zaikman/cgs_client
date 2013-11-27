@@ -1,0 +1,4 @@
+homeaddress*http://cgs-emea.timetoknow.com/cgs
+updateserver*http://localhost:8080/test
+versionname*1.0 alpha
+versionnum*1
