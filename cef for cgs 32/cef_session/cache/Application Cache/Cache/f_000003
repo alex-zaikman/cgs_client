@@ -1,0 +1,1082 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* DEMO TEMP STYLES !!!!  14.1.12                                                                                                              */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.player_debug {
+	min-width: 20px ;
+	min-height: 20px ;
+	position: fixed ;
+	top: 0px ;
+	left: 0px ;
+	content: "x" ;
+	padding: 5px ;
+}
+
+.player_debug.show {
+	background-color: white ;
+	border: black solid 1px
+}
+
+/* .rtl .player_debug { */
+/* 	right: 0px ; */
+/* } */
+
+.player_navigation {
+    background-color: white;
+    z-index: 2147483640;
+    position: relative;
+}
+
+.demo .task_numbering {
+    visibility: hidden;
+}
+
+.demo .task_top_border {
+    border-top: none;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* DEMO TEMP STYLES !!!!  10.1.12                                                                                                              */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*.question .imageViewer_content,
+.question .textViewer {
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+}*/
+
+.textViewer .imageViewer {
+    margin: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* HTML Elements                                                                                                      */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    overflow: hidden;
+    font-family: T2K-Ayala;
+}
+
+html {
+    font-size: 14px;
+}
+
+div {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.show {
+    display: inline;
+}
+
+.sequence.show {
+    display: block;
+}
+
+.visibleHidden {
+    visibility: hidden;
+}
+
+.unselectable {
+    user-select: none;
+}
+
+.hideCursor {
+    cursor: none !important;
+}
+
+.ltr {
+    direction: ltr;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Player Loader                                                                                                      */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.loader {
+    position: fixed;
+    background-position: center;
+    background-color: white;
+    z-index: 100000;
+    display: none;
+
+}
+
+.loaderAnimation {
+    background: url(../assets/images/preLoader/bar-loader2.gif);
+    width: 220px;
+    height: 40px;
+    background-repeat: no-repeat;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Player Pause                                                                                                      */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.player_pause.disabled {
+    position: fixed;
+    background-position: center;
+    background-color: white;
+    z-index: 100000;
+    display: none;
+
+}
+
+/*z-index number is just 1 above z-index of player_navigation*/
+.player_pause.enabled {
+    position: fixed;
+    background-position: center;
+    background-color: white;
+    z-index: 2147483641;
+    display: inline-block;
+    opacity: 0.8;
+
+}
+
+.pause_content {
+    background: url(../assets/images/player/Paused.jpg);
+    width: 610px;
+    height: 320px;
+    background-repeat: no-repeat;
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Player                                                                                                             */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.player {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    -o-user-select: none;
+    /* No support for these yet, use at own risk */
+    user-select: none; 
+}
+
+.rtl.player {
+    direction: rtl;
+}
+
+.ltr.player {
+    direction: ltr;
+}
+
+.player_content {
+    width: 100%;
+    display: block;
+}
+
+.rtl .player_content {
+    direction: rtl;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Sequence                                                                                                           */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.sequence {
+    vertical-align: top;
+}
+
+.ltr .sequence {
+    float: left;
+}
+
+.rtl .sequence {
+    float: right;
+}
+
+/*div[class^="sequence_"],
+div[class*=" sequence_"] {
+    position: relative;
+}*/
+
+.sequence_body {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.sequence_content_scrollable {
+    float: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+.rtl .sequence_content_scrollable{
+    float: right;
+}
+
+.sequence_content_inner {
+    float: left;
+    max-width: 65em;
+}
+
+.sequence_list_head {
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.sequence_list_head.instruction_only {
+    padding-top: 3rem;
+}
+
+.sequence_list_head.empty {
+    padding: 0rem;
+    padding-top: 2.714rem;
+}
+
+.sequence_header .textViewer {
+    color: #333;
+    font-weight: bold;
+    font-size: 2.571rem;
+}
+
+.sequence_margin_left {
+    float: left;
+    min-height: 300px;
+    white-space: normal;
+    /*background:#f7eeb0;*/
+    overflow: hidden;
+}
+
+.sequence_margin_right {
+    float: left;
+    min-height: 300px;
+    white-space: normal;
+    /*background:#f7eeb0;*/
+    overflow: hidden;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Task                                                                                                               */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.task {
+    font-size: 1.571rem;
+    font-weight: normal;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    white-space: normal;
+    word-wrap: break-word;
+    position: relative;
+    display: block;
+}
+
+.task.exposed {
+    z-index: 3;
+}
+.task.exposed.disabled{
+    z-index: auto;
+}
+
+.taskMask {
+    position: absolute;
+    background-color: white;
+    z-index: 100000;
+    display: none;
+    opacity: 0.01;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Player Loader                                                                                                      */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.loader {
+    position: fixed;
+    background-position: center;
+    background-color: white;
+    z-index: 100000;
+    display: none;
+
+}
+
+/*****************************************************************************/
+/* task comparison mode */
+/*****************************************************************************/
+
+.task.comparison {
+    display: inline-block;
+    vertical-align: top;
+
+    /*  background-color: #FFFFCC ; */
+}
+
+.ltr .task.comparison.firstInRow {
+    padding-right: 1.5rem;
+}
+
+.rtl .task.comparison.firstInRow {
+    padding-left: 1.5rem;
+}
+
+.task.comparison.middleInRow {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.ltr .task.comparison.lastInRow {
+    padding-left: 1.5rem;
+}
+
+.rtl .task.comparison.lastInRow {
+    padding-right: 1.5rem;
+}
+
+.task.comparison.oneOfTwo {
+    width: -webkit-calc(50% - 1.5rem);
+}
+
+.task.comparison.oneOfThree {
+    width: 33.3333%;
+}
+
+/*****************************************************************************/
+/* task internal elements */
+/*****************************************************************************/
+
+.task_wrapper_external {
+    position: relative;
+    padding-top: 0.5rem;
+    padding-bottom: 2.786rem;
+}
+
+.task.last_task_in_sequence .task_wrapper_external {
+}
+
+/*****************************************************************************/
+
+.ltr .task_section {
+    /*  padding-right:1.714rem; */
+}
+
+.rtl .task_section {
+    /*  padding-left:1.714rem; */
+}
+
+/************************************/
+
+.task_header {
+    font-size: 1.571rem;
+    color: black;
+    position: relative;
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.ltr .task_header {
+    text-align: left;
+}
+
+.rtl .task_header {
+    text-align: right;
+    direction: rtl;
+}
+
+.task section {
+    display: block;
+    color: black;
+}
+
+.ltr .task section {
+    text-align: left;
+}
+
+.rtl .task section {
+    text-align: right;
+    direction: rtl;
+}
+
+.task_content {
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+    padding-top: 1rem;
+}
+
+.task_content .answer_content .mtqArea.vertical:after {
+    /* fixed bug with .task_toolbar_container position(padding-top) */
+    width: 88%;
+    height: 1px;
+    position: relative;
+    display: inline-block;
+    content: " ";
+    margin-top: -1.5rem;
+}
+
+.ltr .task_content {
+    text-align: left;
+}
+
+.rtl .task_content {
+    text-align: right;
+    direction: rtl;
+}
+
+.task.mask .task_mask {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 45px;
+    opacity: 0;
+    background-color: white;
+}
+
+/* task disabled */
+/* .task.disabled { */
+/*     z-index: -1; */
+/* } */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Instruction                                                                                                         */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* layoutGroup                                                                                                         */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*
+    Assessment Buttons
+*/
+
+/*.show_correct_answer {
+    margin-top: -2px;
+    display: inline-block;
+}
+
+.show_correct_answer_icon {
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    background: url(../assets/images/assessment/assessment-sprite.png) -11px -12px no-repeat;
+}
+
+.ltr .show_correct_answer {
+    float: left;
+    padding-left: 0.57rem;
+    padding-right: 4rem;
+}
+
+.rtl .show_correct_answer {
+    float: right;
+    padding-left: 4rem;
+    padding-right: 0.57rem;
+}*/
+.show_correct_answer {
+    margin-top: -1px;
+    display: inline-block;
+    height: 2.5rem;
+}
+.show_correct_answer.visibleHidden{
+    display: none;
+}
+
+
+.show_correct_answer_content {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 0.537rem;
+    height: 100%;
+    border: solid 1px transparent;
+}
+
+.show_correct_answer_content:active {
+    background-color: #e6e6e6;
+    border-top-color:#CCCCCC;
+    border-left-color:#d9d9d9;
+    border-right-color:#d9d9d9;
+}
+.show_correct_answer_content:active *,
+.show_correct_answer_content:active .show_correct_answer_icon,
+.show_correct_answer_content:active .show_correct_answer_text,
+.show_correct_answer_content:active .show_correct_answer_icon:before {
+    color: #4B4B4B;
+}
+
+.show_correct_answer_content:hover * {
+    color: #5DBFA0;
+}
+
+.show_correct_answer_content .show_correct_answer_icon {
+    display: inline-block;
+    line-height: .5;
+    -webkit-font-smoothing: antialiased;
+}
+.show_correct_answer_content .show_correct_answer_icon:before{
+    text-decoration: inherit;
+    display: inline-block;
+    speak: none;
+    font-family: 't2k-icons';
+    content: "\003a";
+}
+.show_correct_answer_content .show_correct_answer_text {
+    font-size: 1rem;
+    margin-bottom:0.75rem;
+    margin left: -0.188rem;
+    margin-right:.6rem;
+}
+
+.ltr .show_correct_answer {
+    float: left;
+}
+
+.rtl .show_correct_answer {
+    float: right;
+}
+
+.student_flag {
+    display: inline-block;
+}
+
+.student_flag_icon {
+    width: 22px;
+    height: 23px;
+    cursor: pointer;
+    display: inline-block;
+    background: url(../assets/images/assessment/assessment-sprite.png) -136px -31px no-repeat;
+}
+
+.ltr .student_flag {
+    float: right;
+}
+
+.rtl .student_flag {
+    float: left;
+}
+
+.toggled .student_flag_icon {
+    background: url(../assets/images/assessment/assessment-sprite.png) -188px -31px no-repeat;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* General Instruction                                                                                                        */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.instruction {
+    margin-top: -0.3rem;
+    margin-bottom: -0.1rem;
+}
+
+.ltr .instruction {
+    direction: ltr;
+}
+
+.rtl .instruction {
+    direction: rtl;
+}
+
+.instruction .textViewer {
+    font-style: italic;
+    font-size: 1.28rem;
+    line-height: 127%;
+    color: #878787;
+    /*display: inline;*/
+}
+
+.instruction_emphasized {
+    background-color: #3b92d7;
+}
+
+.task_instruction_content.instruction_emphasized {
+    background-color: #FEF3BA;
+}
+
+/* sequence instructions */
+.sequence_instruction_wrapper .instruction .textViewer {
+    font-weight: italic;
+    font-size: 1.429rem;
+    color: #6B6B6B;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Task Instruction                                                                                                        */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.task .instruction {
+}
+
+.header_separator {
+    clear: both;
+}
+
+.header_separator_line {
+    height: 1px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #d9d9d9;
+}
+
+.task_instruction_content {
+    line-height: 124%;
+}
+
+.task_instruction_content .textViewer {
+    line-height: 124%;
+}
+
+.ltr .task_instruction_content {
+    margin-right: 1.42rem;
+}
+
+.ltr .task_instruction_content.has_task_help {
+    margin-right: 3.143rem;
+}
+
+.rtl .task_instruction_content {
+    margin-left: 1.42rem;
+}
+
+.rtl .task_instruction_content.has_task_help {
+    margin-left: 3.143rem;
+}
+
+.task_instruction_content .task_instruction_icon {
+    font-family: "t2k-icons";
+    font-size: 1.1rem;
+    /*margin-top: -2px;*/
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    color: #878787;
+}
+
+.ltr .task_instruction_content .task_instruction_icon {
+    float: left;
+}
+
+.rtl .task_instruction_content .task_instruction_icon {
+    float: right;
+}
+
+.task_instruction_content .textViewer {
+    max-width: 97%;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Question                                                                                                           */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.question {
+    font-size: 1.571rem;
+    color: #282828;
+    width: 100%;
+    max-width: 100%;
+    display: inline-block;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Answer                                                                                                           */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.answer {
+    /* answer width should 100% otherwise in case of display=inline-block it's width will be according
+      to it's contents - this will be a problem in drag&drop tasks */
+    width: 100%;
+}
+
+.readonly .answer {
+    pointer-events: none;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Instruction and feedback                                                                                                   */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.inf_bubble {
+    position: absolute !important;
+    top: 40px;
+    left: 20px;
+    background: url('../assets/images/inf/generic-bubble-under.png') repeat-x;
+    width: 446px;
+    height: 146px;
+    padding-top: 20px;
+    padding-left: 15px;
+    overflow: hidden;
+    z-index: 50000;
+}
+
+.inf_floating_instruction {
+    display: inline-block;
+    font-size: 1rem;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Sub Question                                                                                               */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*  THIS IS WRONG !!  RELEASE 2 ONLY */
+
+.subQuestion .themable_widget_ta {
+    margin-top: 2px !important;
+    padding-top: 0 !important;
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Text Area Viewer                                                                                                   */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.textViewer {
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+}
+
+.textViewerStyle {
+    color: #555555;
+    font-size: 1.57rem;
+}
+
+.textStyle11 {
+    font-size: 1.57rem;
+    color: #000;
+
+}
+
+.textViewer .multiLanguageNarrationWrapDiv {
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.12);
+
+    color: white;
+    position: absolute;
+    height: 26px;
+    width: 34px;
+    z-index: 1;
+    overflow: hidden;
+
+}
+
+.textViewer .multiLanguageNarrationControlDiv {
+    height: 26px;
+    width: 34px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.textViewer .multiLanguageNarrationFirstLangDiv {
+    height: 40px;
+    width: 38px;
+    position: absolute;
+    left: 34px;
+    z-index: 10;
+    font-size: 1.286rem;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+
+.textViewer .multiLanguageNarrationSecondLangDiv {
+    height: 26px;
+    width: 53px;
+    background-color: white;
+    position: absolute;
+    left: 57px;
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+
+    font-size: 1.286rem;
+    text-align: center;
+    display: block;
+    z-index: 1;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.textViewer .narrationStyleDefault {
+    font-size: 1.214rem;
+    font-weight: normal;
+    color: #555555;
+    background-color: white;
+    padding-top: 2px;
+}
+
+.textViewer .narrationStyleDefaultOver {
+    color: #2DD5FF;
+}
+
+.textViewer .narrationStyleSelected {
+    font-weight: bold;
+    color: #EB7A1A;
+    background-color: white;
+}
+
+.textViewer .narrationStylePress {
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #eb7a1a;
+}
+
+.textViewer .narrationStyleSelectedOver {
+    color: #FFA806;
+}
+
+.textViewer .multiLanguageNarrationTextDiv {
+    margin-top: -9px;
+}
+
+.textViewer .multiLanguagePlayArrow {
+    width: 0;
+    height: 0;
+    border-left: 9px solid #5a88ad;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    margin-top: 8px;
+    margin-left: 12px;
+}
+
+.textViewer .multiLanguageStopRect {
+    width: 12px;
+    height: 12px;
+    background-color: #eb7a1a;
+    margin-top: 7px;
+    margin-left: 12px;
+}
+
+.textViewer .multiLanguageStopRect_over {
+    background-color: #ffa806;
+}
+
+/*.textViewer baloonTip {
+    color: #5987AC;
+    cursor: pointer;
+    position: relative;
+}
+
+.textViewer baloonTip .baloonUnderline {
+    height: 2px;
+    position: absolute;
+    background: url('../assets/images/textviewer/underlineSprite.png') repeat-x;
+    bottom: 0px;
+}*/
+
+.textViewer .baloonTipOver {
+    color: #EB7A1A;
+    background-color: #FEF3BA;
+    cursor: pointer;
+}
+
+.textViewer .baloonTipOver .baloonUnderline {
+    background-position: 0 -2px;
+}
+
+.textViewer .baloonTipMouseDown {
+    color: #EB7A1A;
+    border-bottom: #EB7A1A dashed 0.07em;
+    background-color: #FEF3BA;
+    cursor: pointer;
+
+}
+
+.textViewer .arrow-down-BG {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 12px solid #ccc;
+    margin-top: -1px;
+}
+
+.textViewer .arrow-down-shadow {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+
+    border-top: 12px solid rgba(0, 0, 0, 0.12);
+    margin-top: 2px;
+    margin-left: 0px;
+}
+
+.textViewer .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid #f2f2f2;
+    z-index: 999;
+    margin-top: -1px;
+    margin-left: 1px;
+
+}
+
+.textViewer .arrow-up-BG {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 12px solid #ccc;
+    margin-top: 3px;
+
+}
+
+.textViewer .arrow-up-shadow {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 12px solid rgba(0, 0, 0, 0.12);
+
+    margin-top: 0px;
+    margin-left: 0px;
+    opacity: 0;
+}
+
+.textViewer .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid #f2f2f2;
+    z-index: 999;
+    margin-top: 5px;
+    margin-left: 1px;
+}
+
+.baloonStyle {
+    font-family: Arial;
+    font-size: 1.429rem;
+}
+
+.textViewer .Title,
+.textViewer .Subtitle,
+.textViewer .Emphasis,
+.sequence_list_head .task_instruction_content {
+    font-weight: bold;
+    color: #111111;
+    word-break: normal;
+}
+
+.textViewer .Title,
+.textViewer .textViewerParagraph.Title {
+    /*font-size: 1.27em;*/
+    font-size: 32px;
+}
+
+.textViewer .Subtitle,
+.textViewer .textViewerParagraph.Subtitle  {
+    font-size: 1.09em;
+     /*font-size: 27px;*/
+}
+
+.textViewer .RuningText {
+    font-size: 1em;
+}
+
+.textViewer .Caption {
+    font-size: 0.81em;
+    color: #878787;
+}
+
+.textViewer .Caption .Emphasis {
+    color: #878787;
+}
+
+.textViewer .Quote {
+    font-style: italic;
+    color: #555555;
+}
+
+.textViewer .Caption .Quote {
+    font-style: italic;
+    color: #878787;
+}
+
+.textViewer a:link,
+.textViewer a:visited,
+.textViewer a:active {
+    color: #5987AC;
+    text-decoration: underline;
+}
+
+.textViewer a:hover {
+    color: #2CD4FF;
+    text-decoration: underline;
+}
+
+/* General purpose classes */
+
+/* disable "native" selection */
+[draggable], .not_selectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* disable "native" dragging */
+img, .not_draggable {
+    -webkit-user-drag: none;
+}
+
+.masc_error {
+    /*background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, rgba(169, 3, 41, 0.33)), color-stop(44%, rgba(143, 2, 34, 0.62)), color-stop(100%, rgba(109, 0, 25, 1)));*/
+
+    background: -moz-linear-gradient(top, rgba(109, 0, 25, 1) 0%, rgba(143, 2, 34, 0.72) 56%, rgba(169, 3, 41, 0.5) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(109, 0, 25, 1)), color-stop(56%, rgba(143, 2, 34, 0.72)), color-stop(100%, rgba(169, 3, 41, 0.5))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(109, 0, 25, 1) 0%, rgba(143, 2, 34, 0.72) 56%, rgba(169, 3, 41, 0.5) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(109, 0, 25, 1) 0%, rgba(143, 2, 34, 0.72) 56%, rgba(169, 3, 41, 0.5) 100%); /* Opera 11.10+ */
+    background: linear-gradient(top, rgba(109, 0, 25, 1) 0%, rgba(143, 2, 34, 0.72) 56%, rgba(169, 3, 41, 0.5) 100%); /* W3C */
+
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    color: white;
+    text-align: justify;
+    padding: 0.5rem;
+    direction: ltr;
+    display: block;
+    font: bold 1rem arial;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.A_mediaPlayer, #A_mediaPlayer {
+    position: absolute;
+    z-index: 999999;
+}
+

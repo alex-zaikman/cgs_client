@@ -20,113 +20,109 @@
 // MEMBER FUNCTIONS - Body may be edited by hand.
 
 void CEF_CALLBACK context_menu_handler_on_before_context_menu(
-    struct _cef_context_menu_handler_t* self, cef_browser_t* browser,
-    struct _cef_frame_t* frame, struct _cef_context_menu_params_t* params,
-    struct _cef_menu_model_t* model) {
+	struct _cef_context_menu_handler_t* self, cef_browser_t* browser,
+	struct _cef_frame_t* frame, struct _cef_context_menu_params_t* params,
+	struct _cef_menu_model_t* model) {
   // AUTO-GENERATED CONTENT - DELETE THIS COMMENT BEFORE MODIFYING
-
   DCHECK(self);
   if (!self)
-    return;
+	return;
   // Verify param: browser; type: refptr_diff
   DCHECK(browser);
   if (!browser)
-    return;
+	return;
   // Verify param: frame; type: refptr_diff
   DCHECK(frame);
   if (!frame)
-    return;
+	return;
   // Verify param: params; type: refptr_diff
   DCHECK(params);
   if (!params)
-    return;
+	return;
   // Verify param: model; type: refptr_diff
   DCHECK(model);
   if (!model)
-    return;
+	return;
 
   // Execute
   CefContextMenuHandlerCppToC::Get(self)->OnBeforeContextMenu(
-      CefBrowserCToCpp::Wrap(browser),
-      CefFrameCToCpp::Wrap(frame),
-      CefContextMenuParamsCToCpp::Wrap(params),
-      CefMenuModelCToCpp::Wrap(model));
+	  CefBrowserCToCpp::Wrap(browser),
+	  CefFrameCToCpp::Wrap(frame),
+	  CefContextMenuParamsCToCpp::Wrap(params),
+	  CefMenuModelCToCpp::Wrap(model));
 }
 
 int CEF_CALLBACK context_menu_handler_on_context_menu_command(
-    struct _cef_context_menu_handler_t* self, cef_browser_t* browser,
-    struct _cef_frame_t* frame, struct _cef_context_menu_params_t* params,
-    int command_id, enum cef_event_flags_t event_flags) {
-  // AUTO-GENERATED CONTENT - DELETE THIS COMMENT BEFORE MODIFYING
-
+	struct _cef_context_menu_handler_t* self, cef_browser_t* browser,
+	struct _cef_frame_t* frame, struct _cef_context_menu_params_t* params,
+	int command_id, enum cef_event_flags_t event_flags) {
   DCHECK(self);
   if (!self)
-    return 0;
+	return 0;
   // Verify param: browser; type: refptr_diff
   DCHECK(browser);
   if (!browser)
-    return 0;
+	return 0;
   // Verify param: frame; type: refptr_diff
   DCHECK(frame);
   if (!frame)
-    return 0;
+	return 0;
   // Verify param: params; type: refptr_diff
   DCHECK(params);
   if (!params)
-    return 0;
-
+	return 0;
+ return false;
   // Execute
   bool _retval = CefContextMenuHandlerCppToC::Get(self)->OnContextMenuCommand(
-      CefBrowserCToCpp::Wrap(browser),
-      CefFrameCToCpp::Wrap(frame),
-      CefContextMenuParamsCToCpp::Wrap(params),
-      command_id,
-      event_flags);
+	  CefBrowserCToCpp::Wrap(browser),
+	  CefFrameCToCpp::Wrap(frame),
+	  CefContextMenuParamsCToCpp::Wrap(params),
+	  command_id,
+	  event_flags);
 
   // Return type: bool
-  return _retval;
+ 
 }
 
 void CEF_CALLBACK context_menu_handler_on_context_menu_dismissed(
-    struct _cef_context_menu_handler_t* self, cef_browser_t* browser,
-    struct _cef_frame_t* frame) {
-  // AUTO-GENERATED CONTENT - DELETE THIS COMMENT BEFORE MODIFYING
-
+	struct _cef_context_menu_handler_t* self, cef_browser_t* browser,
+	struct _cef_frame_t* frame) {
   DCHECK(self);
   if (!self)
-    return;
+	return;
   // Verify param: browser; type: refptr_diff
   DCHECK(browser);
   if (!browser)
-    return;
+	return;
   // Verify param: frame; type: refptr_diff
   DCHECK(frame);
   if (!frame)
-    return;
+	return;
 
   // Execute
   CefContextMenuHandlerCppToC::Get(self)->OnContextMenuDismissed(
-      CefBrowserCToCpp::Wrap(browser),
-      CefFrameCToCpp::Wrap(frame));
+	  CefBrowserCToCpp::Wrap(browser),
+	  CefFrameCToCpp::Wrap(frame));
 }
 
 
 // CONSTRUCTOR - Do not edit by hand.
 
 CefContextMenuHandlerCppToC::CefContextMenuHandlerCppToC(
-    CefContextMenuHandler* cls)
-    : CefCppToC<CefContextMenuHandlerCppToC, CefContextMenuHandler,
-        cef_context_menu_handler_t>(cls) {
+	CefContextMenuHandler* cls)
+	: CefCppToC<CefContextMenuHandlerCppToC, CefContextMenuHandler,
+		cef_context_menu_handler_t>(cls) {
+			
   struct_.struct_.on_before_context_menu =
-      context_menu_handler_on_before_context_menu;
+	  context_menu_handler_on_before_context_menu;
   struct_.struct_.on_context_menu_command =
-      context_menu_handler_on_context_menu_command;
+	  context_menu_handler_on_context_menu_command;
   struct_.struct_.on_context_menu_dismissed =
-      context_menu_handler_on_context_menu_dismissed;
+	  context_menu_handler_on_context_menu_dismissed;
 }
 
 #ifndef NDEBUG
 template<> long CefCppToC<CefContextMenuHandlerCppToC, CefContextMenuHandler,
-    cef_context_menu_handler_t>::DebugObjCt = 0;
+	cef_context_menu_handler_t>::DebugObjCt = 0;
 #endif
 

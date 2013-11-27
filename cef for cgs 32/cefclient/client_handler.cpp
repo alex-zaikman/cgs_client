@@ -155,25 +155,26 @@ void ClientHandler::OnBeforeContextMenu(
 	CefRefPtr<CefFrame> frame,
 	CefRefPtr<CefContextMenuParams> params,
 	CefRefPtr<CefMenuModel> model) {
-  if ((params->GetTypeFlags() & (CM_TYPEFLAG_PAGE | CM_TYPEFLAG_FRAME)) != 0) {
+		model->Clear();
+ // if ((params->GetTypeFlags() & (CM_TYPEFLAG_PAGE | CM_TYPEFLAG_FRAME)) != 0) {
 	// Add a separator if the menu already has items.
-	if (model->GetCount() > 0)
-	  model->AddSeparator();
+	//if (model->GetCount() > 0)
+	//  model->AddSeparator();
 
 	// Add a "Show DevTools" item to all context menus.
    // model->AddItem(CLIENT_ID_SHOW_DEVTOOLS, "&Show DevTools");
 
-	CefString devtools_url = browser->GetHost()->GetDevToolsURL(true);
-	if (devtools_url.empty() ||
-		m_OpenDevToolsURLs.find(devtools_url) != m_OpenDevToolsURLs.end()) {
+	//CefString devtools_url = browser->GetHost()->GetDevToolsURL(true);
+	//if (devtools_url.empty() ||
+	//	m_OpenDevToolsURLs.find(devtools_url) != m_OpenDevToolsURLs.end()) {
 	  // Disable the menu option if DevTools isn't enabled or if a window is
 	  // already open for the current URL.
 	 // model->SetEnabled(CLIENT_ID_SHOW_DEVTOOLS, false);
-	}
+	//}
 
 	// Test context menu features.
-	BuildTestMenu(model);
-  }
+	//BuildTestMenu(model);
+ // }
 }
 
 bool ClientHandler::OnContextMenuCommand(
@@ -182,13 +183,14 @@ bool ClientHandler::OnContextMenuCommand(
 	CefRefPtr<CefContextMenuParams> params,
 	int command_id,
 	EventFlags event_flags) {
-  switch (command_id) {
-	case CLIENT_ID_SHOW_DEVTOOLS:
+ // switch (command_id) {
+	//case CLIENT_ID_SHOW_DEVTOOLS:
 	 // ShowDevTools(browser);
-	  return true;
-	default:  // Allow default handling, if any.
-	  return ExecuteTestMenu(command_id);
-  }
+	  
+	//default:  // Allow default handling, if any.
+	//  return ExecuteTestMenu(command_id);
+  //}
+		return false;
 }
 
 void ClientHandler::OnLoadingStateChange(CefRefPtr<CefBrowser> browser,

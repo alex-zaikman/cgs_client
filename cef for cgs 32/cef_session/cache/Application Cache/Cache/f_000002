@@ -1,0 +1,1027 @@
+/*************************************************************************/
+/****************TEXTAREA COMPONENT***************************************/
+/*************************************************************************/
+.ta.themable_widget_ta {
+    border: solid 1px #B3B3B3;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: bottom;
+}
+
+.ta .themable_widget_ta_toolbar {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+
+    display: block;
+    background-color: #f2f2f2;
+    font: 10px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    border: 1px solid #cccccc;
+    height: 34px;
+
+    padding-right: 2px;
+    padding-left: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+
+    top: -34px;
+    left: -7px;
+
+    white-space: nowrap;
+    direction: ltr;
+
+    z-index: 2147483646;
+}
+
+.ta .themable_widget_ta_toolbar .themable_widget_ta_toolbar_panel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font: 10px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+
+    width: 38px;
+
+    -webkit-box-shadow: 2px 2px 2px #dddddd;
+    -moz-box-shadow: 2px 2px 2px #dddddd;
+    box-shadow: 2px 2px 2px #dddddd;
+
+    margin-top: 6px;
+
+}
+
+/*************************************************************************/
+/****************TEXTAREA COMPONENTS *************************************/
+/*************************************************************************/
+
+.ta .arrow-down-BG {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 12px solid #cccccc;
+
+    margin-top: -1px;
+}
+
+.ta .arrow-down-shadow {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 12px solid rgba(0, 0, 0, 0.12);
+
+    margin-top: 2px;
+}
+
+.ta .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid #f2f2f2;
+
+    margin-top: -2px;
+
+    z-index: 2147483646;
+}
+
+/* css hack for ie9 */
+
+ul {
+    margin: 0px;
+}
+
+body {
+    overflow: auto;
+}
+body.texteditor{
+    color: #9F5C1C;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+/***********************************************************************************************/
+/****************            P A N E L            **********************************************/
+/***********************************************************************************************/
+.ta .themable_widget_ta_toolbar_panel {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font: 10px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+
+    width: 40px;
+
+    -webkit-box-shadow: 2px 2px 2px #dddddd;
+    -moz-box-shadow: 2px 2px 2px #dddddd;
+    box-shadow: 2px 2px 2px #dddddd;
+
+    margin-top: -1px;
+    z-index: 10000;
+
+}
+
+.ta .themable_widget_ta_toolbar_panel div {
+    background: url('../assets/images/textarea/EditorToolbar_sprite.png') no-repeat 0 0;
+    width: 38px;
+    height: 28px;
+}
+
+/* drop down menu (panel) upper shadow */
+.ta .themable_widget_ta_toolbar_panel div.dropDownUpperShadow {
+    background-position: 0 -3877px;
+    height: 5px;
+}
+
+/* squareList button */
+.ta .themable_widget_ta_toolbar_panel div.squareList {
+    background-position: 0 -2016px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.squareList-over {
+    background-position: 0 -2044px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.squareList-press {
+    background-position: 0 -2072px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.squareList-disable {
+    background-position: 0 -2100px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.squareList-selected {
+    background-position: 0 -2128px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.squareList-selected-over {
+    background-position: 0 -2156px;
+    background-color: #E0E0E0;
+}
+
+/* discList button */
+.ta .themable_widget_ta_toolbar_panel div.discList {
+    background-position: 0 -2184px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.discList-over {
+    background-position: 0 -2212px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.discList-press {
+    background-position: 0 -2240px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.discList-disable {
+    background-position: 0 -2268px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.discList-selected {
+    background-position: 0 -2296px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.discList-selected-over {
+    background-position: 0 -2324px;
+    background-color: #E0E0E0;
+}
+
+/* numberList button */
+.ta .themable_widget_ta_toolbar_panel div.numberList {
+    background-position: 0 -2352px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.numberList-over {
+    background-position: 0 -2380px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.numberList-press {
+    background-position: 0 -2408px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.numberList-disable {
+    background-position: 0 -2436px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.numberList-selected {
+    background-position: 0 -2464px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.numberList-selected-over {
+    background-position: 0 -2492px;
+    background-color: #E0E0E0;
+}
+
+/* justifyLeft button */
+
+.ta .themable_widget_ta_toolbar_panel div.justifyLeft {
+    background-position: 0 -2856px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyLeft-over {
+    background-position: 0 -2884px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyLeft-press {
+    background-position: 0 -2912px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyLeft-disable {
+    background-position: 0 -2940px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyLeft-selected {
+    background-position: 0 -2968px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyLeft-selected-over {
+    background-position: 0 -2996px;
+    background-color: #E0E0E0;
+}
+
+/* justifyCenter button */
+
+.ta .themable_widget_ta_toolbar_panel div.justifyCenter {
+    background-position: 0 -3024px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyCenter-over {
+    background-position: 0 -3052px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyCenter-press {
+    background-position: 0 -3080px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyCenter-disable {
+    background-position: 0 -3108px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyCenter-selected {
+    background-position: 0 -3136px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyCenter-selected-over {
+    background-position: 0 -3164px;
+    background-color: #E0E0E0;
+}
+
+/* justifyRight button */
+
+.ta .themable_widget_ta_toolbar_panel div.justifyRight {
+    background-position: 0 -3192px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyRight-over {
+    background-position: 0 -3220px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyRight-press {
+    background-position: 0 -3248px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyRight-disable {
+    background-position: 0 -3276px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyRight-selected {
+    background-position: 0 -3304px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.justifyRight-selected-over {
+    background-position: 0 -3332px;
+    background-color: #E0E0E0;
+}
+
+/* indent button */
+
+.ta .themable_widget_ta_toolbar_panel div.indent {
+    background-position: 0 -2688px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.indent-over {
+    background-position: 0 -2716px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.indent-press {
+    background-position: 0 -2744px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.indent-disable {
+    background-position: 0 -2772px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.indent-selected {
+    background-position: 0 -2800px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.indent-selected-over {
+    background-position: 0 -2828px;
+}
+
+/* outdent button */
+
+.ta .themable_widget_ta_toolbar_panel div.outdent {
+    background-position: 0 -2520px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-over {
+    background-position: 0 -2548px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-press {
+    background-position: 0 -2576px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-disable {
+    background-position: 0 -2604px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-selected {
+    background-position: 0 -2632px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-selected-over {
+    background-position: 0 -2660px;
+}
+
+/* outdent button */
+
+.ta .themable_widget_ta_toolbar_panel div.outdent {
+    background-position: 0 -2520px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-over {
+    background-position: 0 -2548px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-press {
+    background-position: 0 -2576px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-disable {
+    background-position: 0 -2604px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-selected {
+    background-position: 0 -2632px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.outdent-selected-over {
+    background-position: 0 -2660px;
+}
+
+/* dirRightToLeft button */
+
+.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft {
+    background-position: 0 -3528px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-over {
+    background-position: 0 -3556px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-press {
+    background-position: 0 -3584px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-disable {
+    background-position: 0 -3612px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-selected {
+    background-position: 0 -3640px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-selected-over {
+    background-position: 0 -3668px;
+}
+
+/* dirLeftToRight button */
+
+.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight {
+    background-position: 0 -3360px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-over {
+    background-position: 0 -3388px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-press {
+    background-position: 0 -3416px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-disable {
+    background-position: 0 -3444px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-selected {
+    background-position: 0 -3472px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-selected-over {
+    background-position: 0 -3500px;
+}
+
+/* fontSize style */
+
+.ta .themable_widget_ta_toolbar_panel div.fontSize {
+    background: none;
+    font-size: 1.286rem;
+    text-align: center;
+    /*color: #4c4c4c;*/
+    height: 28px;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.fontSize-over {
+    background: none;
+    /* font-family: PT Sans; */
+    font-size: 1.286rem;
+    text-align: center;
+    color: #4c4c4c;
+    background-color: #D1ECF6;
+    height: 28px;
+    vertical-align: middle;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.fontSize-press {
+    background: none;
+    font-size: 1.286rem;
+    text-align: center;
+    background-color: #eb7a1a;
+    height: 28px;
+    vertical-align: middle;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.fontSize-disable {
+    background: none;
+    font-size: 1.286rem;
+    text-align: center;
+    height: 28px;
+    vertical-align: middle;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.fontSize-selected {
+    background: none;
+    font-size: 1.286rem;
+    text-align: center;
+    height: 28px;
+    vertical-align: middle;
+}
+
+.ta .themable_widget_ta_toolbar_panel div.fontSize-selected-over {
+    background: none;
+    font-size: 1.286rem;
+    text-align: center;
+    height: 28px;
+    vertical-align: middle;
+}
+
+.ta .themable_widget_ta_toolbar_panel td a.colorPicker {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 2px;
+    padding: 1px;
+    border: solid 2px #ffffff;
+    -moz-box-shadow: 0 0 0 2px #ffffff;
+    -webkit-box-shadow: 0 0 0 2px #ffffff;
+    box-shadow: 0 0 0 2px #ffffff;
+}
+
+.ta .themable_widget_ta_toolbar_panel td a:hover.colorPicker {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 2px;
+    padding: 1px;
+    border: solid 2px #ffffff;
+    -moz-box-shadow: 0 0 0 2px #2DD5FF;
+    -webkit-box-shadow: 0 0 0 2px #2DD5FF;
+    box-shadow: 0 0 0 2px #2DD5FF;
+}
+
+.ta .themable_widget_ta_toolbar_panel td a.currentColorPicker {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 2px;
+    padding: 1px;
+    border: solid 2px #ffffff;
+    -moz-box-shadow: 0 0 0 2px #eb7a1a;
+    -webkit-box-shadow: 0 0 0 2px #eb7a1a;
+    box-shadow: 0 0 0 2px #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar_panel td a:hover.currentColorPicker {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 2px;
+    padding: 1px;
+    border: solid 2px #ffffff;
+    -moz-box-shadow: 0 0 0 2px #2DD5FF;
+    -webkit-box-shadow: 0 0 0 2px #2DD5FF;
+    box-shadow: 0 0 0 2px #2DD5FF;
+}
+
+/***********************************************************************************************/
+/****************            T O O L B A R   C O N T R O L S            ************************/
+/***********************************************************************************************/
+.ta .themable_widget_ta_toolbar ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.ta .themable_widget_ta_toolbar ul li {
+    list-style-type: none;
+    float: left;
+    padding: 0;
+    margin: 0px 0px;
+    margin-top: 2px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div {
+    display: block;
+    width: 40px;
+    height: 28px;
+    background: url('../assets/images/textarea/EditorToolbar_sprite.png') no-repeat 0 0;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+/* bold button*/
+.ta .themable_widget_ta_toolbar ul li div.bold {
+    background-position: 0 -504px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.bold-over {
+    background-position: 0 -532px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.bold-press {
+    background-position: 0 -560px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.bold-disable {
+    background-position: 0 -588px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.bold-selected {
+    background-position: 0 -616px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.bold-selected-over {
+    background-position: 0 -644px;
+    background-color: #E0E0E0;
+}
+
+/* italic button*/
+.ta .themable_widget_ta_toolbar ul li div.italic {
+    background-position: 0 -672px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.italic-over {
+    background-position: 0 -700px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.italic-press {
+    background-position: 0 -728px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.italic-disable {
+    background-position: 0 -756px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.italic-selected {
+    background-position: 0 -784px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.italic-selected-over {
+    background-position: 0 -812px;
+    background-color: #E0E0E0;
+}
+
+/* underline button */
+.ta .themable_widget_ta_toolbar ul li div.underline {
+    background-position: 0 -840px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.underline-over {
+    background-position: 0 -868px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.underline-press {
+    background-position: 0 -896px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.underline-disable {
+    background-position: 0 -924px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.underline-selected {
+    background-position: 0 -952px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.underline-selected-over {
+    background-position: 0 -980px;
+    background-color: #E0E0E0;
+}
+
+/* undo button */
+.ta .themable_widget_ta_toolbar ul li div.undo {
+    background-position: 0 -168px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.undo-over {
+    background-position: 0 -196px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.undo-press {
+    background-position: 0 -224px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.undo-disable {
+    background-position: 0 -252px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.undo-selected {
+    background-position: 0 -280px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.undo-selected-over {
+    background-position: 0 -308px;
+    background-color: #E0E0E0;
+}
+
+/* redo button */
+.ta .themable_widget_ta_toolbar ul li div.redo {
+    background-position: 0 -336px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.redo-over {
+    background-position: 0 -364px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.redo-press {
+    background-position: 0 -392px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.redo-disable {
+    background-position: 0 -420px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.redo-selected {
+    background-position: 0 -448px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.redo-selected-over {
+    background-position: 0 -476px;
+    background-color: #E0E0E0;
+}
+
+/* lists button */
+.ta .themable_widget_ta_toolbar ul li div.lists {
+    background-position: 0 -1008px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.lists-over {
+    background-position: 0 -1036px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.lists-press {
+    background-position: 0 -1064px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.lists-disable {
+    background-position: 0 -1092px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.lists-selected {
+    background-position: 0 -1120px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.lists-selected-over {
+    background-position: 0 -1148px;
+    background-color: #E0E0E0;
+}
+
+/* aligns button */
+.ta .themable_widget_ta_toolbar ul li div.aligns {
+    background-position: 0 -1344px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.aligns-over {
+    background-position: 0 -1372px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.aligns-press {
+    background-position: 0 -1400px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.aligns-disable {
+    background-position: 0 -1428px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.aligns-selected {
+    background-position: 0 -1456px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.aligns-selected-over {
+    background-position: 0 -1484px;
+    background-color: #E0E0E0;
+}
+
+/* indents button */
+.ta .themable_widget_ta_toolbar ul li div.indents {
+    background-position: 0 -1176px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.indents-over {
+    background-position: 0 -1204px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.indents-press {
+    background-position: 0 -1232px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.indents-disable {
+    background-position: 0 -1260px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.indents-selected {
+    background-position: 0 -1288px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.indents-selected-over {
+    background-position: 0 -1316px;
+    background-color: #E0E0E0;
+}
+
+/* dirs button */
+.ta .themable_widget_ta_toolbar ul li div.dirs {
+    background-position: 0 -1512px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.dirs-over {
+    background-position: 0 -1540px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.dirs-press {
+    background-position: 0 -1568px;
+    background-color: #eb7a1a;
+}
+
+/*.ta .themable_widget_ta_toolbar ul li div.dirs-disable {*/
+    /*background-position: 0 -1596px;*/
+/*}*/
+
+.ta .themable_widget_ta_toolbar ul li div.dirs-selected {
+    background-position: 0 -1624px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.dirs-selected-over {
+    background-position: 0 -1652px;
+    background-color: #E0E0E0;
+}
+
+/* fontSize button */
+.ta .themable_widget_ta_toolbar ul li div.fontSize {
+    background-position: 0 0;
+    /* font-family: PT Sans; */
+    font-size: 1.286rem;
+    color: #179FD1;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.fontSize-over {
+    background-position: 0 -28px;
+    /* font-family: PT Sans; */
+    font-size: 1.286rem;
+    color: #2DD5FF;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.fontSize-press {
+    background-position: 0 -56px;
+    background-color: #eb7a1a;
+    /* font-family: PT Sans; */
+    font-size: 1.286rem;
+    color: #ffffff;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.fontSize-disable {
+    background-position: 0 -84px;
+    /* font-family: PT Sans; */
+    font-size: 1.286rem;
+    color: #179FD1;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.fontSize-selected {
+    background-position: 0 -112px;
+    /* font-family: PT Sans; */
+    font-size: 1.286rem;
+    color: #179FD1;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.fontSize-selected-over {
+    background-position: 0 -140px;
+    /* font-family: PT Sans; */
+    font-size: 1.286rem;
+    color: #179FD1;
+}
+
+.ta .themable_widget_ta_toolbar ul li div table.fontSizeDisplay {
+    background: none;
+    padding-left: 5px;
+}
+
+/* marker button */
+.ta .themable_widget_ta_toolbar ul li div.marker {
+    background-position: 0 -1848px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.marker-over {
+    background-position: 0 -1876px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.marker-press {
+    background-position: 0 -1904px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.marker-disable {
+    background-position: 0 -1932px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.marker-selected {
+    background-position: 0 -1960px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.marker-selected-over {
+    background-position: 0 -1988px;
+    background-color: #E0E0E0;
+}
+
+/* setColor button */
+.ta .themable_widget_ta_toolbar ul li div.setColor {
+    background-position: 0 -1680px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.setColor-over {
+    background-position: 0 -1708px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.setColor-press {
+    background-position: 0 -1736px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.setColor-disable {
+    background-position: 0 -1764px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.setColor-selected {
+    background-position: 0 -1792px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.setColor-selected-over {
+    background-position: 0 -1820px;
+}
+
+/* setColor button */
+.ta .themable_widget_ta_toolbar ul li div table.setColorDisplay td {
+    width: 2px;
+    height: 13px;
+    background-color: #000000;
+}
+
+.ta .themable_widget_ta_toolbar ul li div table.setColorDisplay {
+    padding-top: 4px;
+    padding-left: 20px;
+}
+
+/* math field button */
+.ta .themable_widget_ta_toolbar ul li div.mf {
+    background-position: 0 -3882px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.mf-over {
+    background-position: 0 -3910px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.mf-press {
+    background-position: 0 -3938px;
+    background-color: #eb7a1a;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.mf-disable {
+    background-position: 0 -3966px;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.mf-selected {
+    background-position: 0 -3994px;
+    background-color: #E0E0E0;
+}
+
+.ta .themable_widget_ta_toolbar ul li div.mf-selected-over {
+    background-position: 0 -4022px;
+    background-color: #E0E0E0;
+}
+
+/*.subAnswer ta, .subAnswer ta iframe {
+    margin-top: 0px !important;
+}*/
+
+/***************************************************************/
+/******************* styles ************************************/
+/***************************************************************/
+.ta .style1 {
+    font-weight: normal;
+    font-style: normal;
+    color: #9F5C1C;
+    text-decoration: none;
+    font-size: 1.357rem;
+    background-color: #FFF;
+}
+
+.ta .style2 {
+    font-weight: normal;
+    font-style: normal;
+    color: #66b6ff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: #FFF;
+}
+
+.ta .style3 {
+    font-weight: normal;
+    font-style: normal;
+    color: #555;
+    text-decoration: none;
+    font-size: 1.214rem;
+    background-color: #FFF;
+}
+
+/* bug fixed : Chrome execCommand()  always applies a font-size from html-css */
+.texteditor.style1 ul li > span,
+.texteditor.style1 ol li > span {
+    font-size: inherit !important; 
+}
