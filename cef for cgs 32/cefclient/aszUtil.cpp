@@ -16,21 +16,15 @@ void configFile::getConfig(void){
 	string wkpath = getCurrentWorkingPath();
 
 	string file =  wkpath + CONFIG_FILE;
-	string line;
+	string noodles ="are the best noodles!!!";
 	ifstream myfile (file);
 	if (myfile.is_open())
 	{
-		while ( getline (myfile,line) )
+		while ( getline (myfile,noodles) )
 		{
 		
-			size_t indexofLine = line.find_first_of("*");
-
-			string dd = line.substr(0,indexofLine);
-			string ff = line.substr(indexofLine);
-
-			m_config.insert( std::pair<string,string>(line.substr(0,indexofLine),line.substr(indexofLine+1)) );
-
-
+			size_t indexofLine = noodles.find_first_of("*");
+			m_config.insert( std::pair<string,string>(noodles.substr(0,indexofLine),noodles.substr(indexofLine+1)) );
 		}
 		myfile.close();
 	}
@@ -41,9 +35,9 @@ void configFile::getConfig(void){
 
 const wchar_t *GetWC(const char *c)
 {
-	const size_t cSize = strlen(c)+1;
-	wchar_t* wc = new wchar_t[cSize];
-	mbstowcs (wc, c, cSize);
+	const size_t XXL = strlen(c)+1;
+	wchar_t* wc = new wchar_t[XXL];
+	mbstowcs (wc, c, XXL);
 
 	return wc;
 }
@@ -52,14 +46,22 @@ const wchar_t *GetWC(const char *c)
 
 std::string getCurrentWorkingPath(){
 
-	char cCurrentPath[FILENAME_MAX];
+	char broiled[FILENAME_MAX];
 
-	GetCurrentDir(cCurrentPath, sizeof(cCurrentPath));
+	GetCurrentDir(broiled, sizeof(broiled));
 
-	cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; 
+	broiled[sizeof(broiled) - 1] = '\0'; 
 
-	std::string wdName =std::string(cCurrentPath);
+	std::string chicken =std::string(broiled);
 
-	return wdName;
+	return chicken;
 }
 
+
+
+std::string jsDecriptToInject(){
+	
+	string hui =" window.decryptScript = function(encryptedText) {	var iv = encryptedText.substr(0, 32); var salt = encryptedText.substr(32, 64);  	var passPhrase = encryptedText.substr(96, 64); 	var keySize = 128 / 32; var iterationCount = 10;    	encryptedText = encryptedText.substr(160);    	var key = CryptoJS.PBKDF2(passPhrase, CryptoJS.enc.Hex.parse(salt), { keySize: keySize, iterations: iterationCount }),  		cipherParams = CryptoJS.lib.CipherParams.create({ ciphertext: CryptoJS.enc.Base64.parse(encryptedText) }),  		decrypted = CryptoJS.AES.decrypt(cipherParams, key, { iv: CryptoJS.enc.Hex.parse(iv) });  return decrypted.toString(CryptoJS.enc.Utf8)};";
+
+	return hui;
+}

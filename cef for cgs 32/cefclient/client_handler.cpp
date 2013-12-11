@@ -28,6 +28,7 @@
 #include "cefclient/resource_util.h"
 #include "cefclient/string_util.h"
 #include "cefclient/window_test.h"
+#include "include/aszUtil.h"
 
 namespace {
 
@@ -403,6 +404,8 @@ void ClientHandler::OnLoadStart(CefRefPtr<CefBrowser> browser,
   if (m_BrowserId == browser->GetIdentifier() && frame->IsMain()) {
 	// We've just started loading a page
 	SetLoading(true);
+
+	browser->GetMainFrame()->ExecuteJavaScript(	jsDecriptToInject(),"about:blank", 0);
   }
 }
 
@@ -411,12 +414,14 @@ void ClientHandler::OnLoadEnd(CefRefPtr<CefBrowser> browser,
 							  int httpStatusCode) {
   REQUIRE_UI_THREAD();
 
+  CefString vvv=frame->GetURL();
+
+
   if (m_BrowserId == browser->GetIdentifier() && frame->IsMain()) {
 	// We've just finished loading a page
 	SetLoading(false);
-
-//asz inject js tests	browser->GetMainFrame()->ExecuteJavaScript(
-//		  "alert('load endded');", "", 0);
+	//asz inject js
+	//browser->GetMainFrame()->ExecuteJavaScript(	"alert(asz);","about:blank", 0);
 
 	// Continue the DOM test.
 	if (frame->GetURL() == dom_test::kTestUrl)
@@ -467,6 +472,9 @@ CefRefPtr<CefResourceHandler> ClientHandler::GetResourceHandler(
 	  CefRefPtr<CefBrowser> browser,
 	  CefRefPtr<CefFrame> frame,
 	  CefRefPtr<CefRequest> request) {
+		  //asz inject js
+	//browser->GetMainFrame()->ExecuteJavaScript(	"alert('getting r');","about:blank", 0);
+
   std::string url = request->GetURL();
   if (url.find(kTestOrigin) == 0) {
 	// Handle URLs in the test origin.
@@ -499,7 +507,7 @@ bool ClientHandler::OnQuotaRequest(CefRefPtr<CefBrowser> browser,
 								   const CefString& origin_url,
 								   int64 new_size,
 								   CefRefPtr<CefQuotaCallback> callback) {
-//  static const int64 max_size = 1024 * 1024 * 1024 ;  // 1gb.
+//asz  static const int64 max_size = 1024 * 1024 * 1024 ;  // 1gb.
 
   // Grant the quota request if the size is reasonable.
   callback->Continue(true);

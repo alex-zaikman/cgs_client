@@ -1,4 +1,5 @@
-homeaddress*http://cgs-emea.timetoknow.com/cgs
-updateserver*http://dummy.com/cgsclient
-versionnum*1
+homeaddress*http://www.w3schools.com/html/tryit.asp?filename=tryhtml5_audio_all
+homeaddress222*http://devtest.timetoknow.com/lms
+updateserver*http://localhost:8080/test
 versionname*1.0 alpha
+versionnum*1

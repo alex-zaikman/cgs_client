@@ -1,0 +1,15 @@
+{
+	"direction":"rtl",
+    "resetConfirmation" : "אישור איפוס",
+    "resetQuestion":"האם אתה בטוח שברצונך לאפס את המודל שלך?",
+    "changeNLTypeConfirmation": "אימות שינוי סוג המספרים בציר",
+    "changeNLTypeQuestion" : "האם אתה בטוח שברצונך לשנות את סוג המספרים בציר?",
+    "changeTaskTypeConfirmation": "אימות שינוי סוג המשימה",
+    "changeTaskTypeQuestion" : "האם אתה בטוח שברצונך לשנות את סוג המשימה?",
+    "reset":"איפוס",
+    "cancel":"ביטול",
+    "change":"שינוי",
+    "from":"מ",
+    "to":"עד",
+    "set":"קבע"
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html style="overflow: hidden;">
+
+<head>
+	<!-- load css -->
+	<link rel="stylesheet" href="css/NLStyle.css"/>
+</head>
+
+<body>
+
+	<div id="container">
+		<div id="lockModal"></div>
+		<div id="actionMenuContainer"></div>			
+		<div id="appletContainer">
+		</div>			
+		<div id="settings">
+			<div class="settings-headline-bar">
+				Settings
+			</div>	
+			<div id="settingsContent">
+			</div>
+		</div>
+		<div id="mathematicalMeaningContainer"></div>
+		
+	</div>
+
+	<!-- <script type='application/javascript' src='js/plugins/fastclick.js'></script> -->
+	<script src="js/libs/webfontloader/webfont.js"></script>
+	<script data-main="js/main" src="js/libs/require/require.js"></script>
+</body>
+
+</html>

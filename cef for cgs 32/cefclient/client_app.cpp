@@ -360,7 +360,7 @@ bool ClientApp::OnProcessMessageReceived(
   if (handled)
     return true;
 
-  // Execute the registered JavaScript callback if any.
+  //asz Execute the registered JavaScript callback if any.
   if (!callback_map_.empty()) {
     CefString message_name = message->GetName();
     CallbackMap::const_iterator it = callback_map_.find(

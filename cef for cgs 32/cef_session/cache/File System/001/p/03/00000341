@@ -1,0 +1,120 @@
+@import "mixins";
+
+.numberComponent
+{
+	@include box-horizontal;
+	@include box-border;
+
+	position: relative;
+	height: 100%;
+	padding: 3px;
+	background: transparent;
+	-webkit-animation-duration: 500ms;
+	-webkit-user-select: none;
+	
+	.wholeWrapper
+	{
+		display: -webkit-box;
+		height: 100%;
+		color: inherit;
+	}
+
+	.fraction
+	{
+		display: none;
+
+		hr.fraction-line
+		{
+			margin: 0 auto !important;
+			border-color:inherit !important;
+			width:14px !important;
+		}
+
+		input
+		{
+			@include box-border;
+			height: 50%;
+			font-size: 14px;
+		}
+	}
+
+	&.withFraction .fraction
+	{
+		@include box-vertical;
+		@include box-pack(center);
+
+		text-align: center;
+	}
+
+	&.noWhole 
+	{
+		.fraction input
+		{
+			width: 85%;	
+		}
+
+		.wholeWrapper
+		{
+			display: none;
+		}
+		
+	}
+
+	input
+	{
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		border:none;
+		outline: 0;
+		text-align: center;
+		background: transparent;
+		font-family: 't2kmathusa-regular-webfont';
+		font-size: 16px;
+		color: inherit;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			/* display: none; <- Crashes Chrome on hover */
+			-webkit-appearance: none;
+			margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+		}
+	}
+
+
+	.fractionTooltip
+	{
+		@include box-center;
+
+		position: absolute;
+		top:-45px;
+		left:0;
+		width: 32px;
+		height: 32px;
+		background: #334459;
+		border:4px solid #445C77;
+		box-shadow:0px 1px 1px rgba(0, 0, 0, 0.4);
+		color: #FFFFFF;
+		font-size: 32px;
+
+		cursor: pointer;
+		z-index: 1000;
+	}
+}
+
+
+.readonly .numberComponent
+{
+
+	&.noWhole .wholeWrapper
+	{
+		display: none;	
+	}
+
+	input
+	{
+		-webkit-user-select:none;
+		cursor: default;
+	}
+}

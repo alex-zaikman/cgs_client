@@ -1,0 +1,15 @@
+{
+    "direction":"ltr",
+    "resetConfirmation" : "Reset Confirmation",
+    "resetQuestion":"Are you sure you want to reset your model?",
+    "changeNLTypeConfirmation": "Change Number Line Type Confirmation",
+    "changeNLTypeQuestion" : "Are you sure you want to change the number line type?",
+    "changeTaskTypeConfirmation": "Change Task Type Confirmation",
+    "changeTaskTypeQuestion" : "Are you sure you want to change the task type?",
+    "reset":"Reset",
+    "cancel":"Cancel",
+    "change":"Change",
+    "from":"From",
+    "to":"To",
+    "set":"Set"
+}

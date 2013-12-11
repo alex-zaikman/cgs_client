@@ -1,0 +1,43 @@
+{
+	"main": 
+		{
+		"colorScheme": "light",
+		"items": [
+			{
+				"id": "edit",
+				"class": "General-edit",
+				"tooltip": "edit",
+				"callback": "editCallbackFunction"
+			},
+			{
+				"id": "shapes",
+				"subMenuId": "shapesSubMenu",
+				"class": "General-edit",
+				"tooltip": "pick a shape"
+			}
+		]
+	},
+	"subMenus": [
+		{
+			"id": "shapesSubMenu",
+			"colorScheme": "dark",
+			"items": [
+				{
+					"id": "circle",
+					"class": "General-anchor",
+					"callback": "pickCircle"
+				},
+				{
+					"id": "circle",
+					"class": "General-anchor",
+					"callback": "pickCircle"
+				},
+				{
+					"id": "circle",
+					"class": "General-anchor",
+					"callback": "pickCircle"
+				}
+			]
+		}
+	]
+}

@@ -1,1027 +1,274 @@
-/*************************************************************************/
-/****************TEXTAREA COMPONENT***************************************/
-/*************************************************************************/
-.ta.themable_widget_ta {
-    border: solid 1px #B3B3B3;
-    display: inline-block;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    vertical-align: bottom;
-}
-
-.ta .themable_widget_ta_toolbar {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-
-    display: block;
-    background-color: #f2f2f2;
-    font: 10px Tahoma, Verdana, Arial, Helvetica, sans-serif;
-    border: 1px solid #cccccc;
-    height: 34px;
-
-    padding-right: 2px;
-    padding-left: 2px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-
-    top: -34px;
-    left: -7px;
-
-    white-space: nowrap;
-    direction: ltr;
-
-    z-index: 2147483646;
-}
-
-.ta .themable_widget_ta_toolbar .themable_widget_ta_toolbar_panel {
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-right: 1px solid #cccccc;
-    border-left: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
-
-    display: block;
-    clear: both;
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    font: 10px Tahoma, Verdana, Arial, Helvetica, sans-serif;
-
-    width: 38px;
-
-    -webkit-box-shadow: 2px 2px 2px #dddddd;
-    -moz-box-shadow: 2px 2px 2px #dddddd;
-    box-shadow: 2px 2px 2px #dddddd;
-
-    margin-top: 6px;
-
-}
-
-/*************************************************************************/
-/****************TEXTAREA COMPONENTS *************************************/
-/*************************************************************************/
-
-.ta .arrow-down-BG {
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 12px solid #cccccc;
-
-    margin-top: -1px;
-}
-
-.ta .arrow-down-shadow {
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 12px solid rgba(0, 0, 0, 0.12);
-
-    margin-top: 2px;
-}
-
-.ta .arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 10px solid #f2f2f2;
-
-    margin-top: -2px;
-
-    z-index: 2147483646;
-}
-
-/* css hack for ie9 */
-
-ul {
-    margin: 0px;
-}
-
-body {
-    overflow: auto;
-}
-body.texteditor{
-    color: #9F5C1C;
-    -webkit-overflow-scrolling: touch;
-
-}
-
-/***********************************************************************************************/
-/****************            P A N E L            **********************************************/
-/***********************************************************************************************/
-.ta .themable_widget_ta_toolbar_panel {
-
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-right: 1px solid #cccccc;
-    border-left: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
-
-    display: block;
-    clear: both;
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    font: 10px Tahoma, Verdana, Arial, Helvetica, sans-serif;
-
-    width: 40px;
-
-    -webkit-box-shadow: 2px 2px 2px #dddddd;
-    -moz-box-shadow: 2px 2px 2px #dddddd;
-    box-shadow: 2px 2px 2px #dddddd;
-
-    margin-top: -1px;
-    z-index: 10000;
-
-}
-
-.ta .themable_widget_ta_toolbar_panel div {
-    background: url('../assets/images/textarea/EditorToolbar_sprite.png') no-repeat 0 0;
-    width: 38px;
-    height: 28px;
-}
-
-/* drop down menu (panel) upper shadow */
-.ta .themable_widget_ta_toolbar_panel div.dropDownUpperShadow {
-    background-position: 0 -3877px;
-    height: 5px;
-}
-
-/* squareList button */
-.ta .themable_widget_ta_toolbar_panel div.squareList {
-    background-position: 0 -2016px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.squareList-over {
-    background-position: 0 -2044px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.squareList-press {
-    background-position: 0 -2072px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.squareList-disable {
-    background-position: 0 -2100px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.squareList-selected {
-    background-position: 0 -2128px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.squareList-selected-over {
-    background-position: 0 -2156px;
-    background-color: #E0E0E0;
-}
-
-/* discList button */
-.ta .themable_widget_ta_toolbar_panel div.discList {
-    background-position: 0 -2184px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.discList-over {
-    background-position: 0 -2212px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.discList-press {
-    background-position: 0 -2240px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.discList-disable {
-    background-position: 0 -2268px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.discList-selected {
-    background-position: 0 -2296px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.discList-selected-over {
-    background-position: 0 -2324px;
-    background-color: #E0E0E0;
-}
-
-/* numberList button */
-.ta .themable_widget_ta_toolbar_panel div.numberList {
-    background-position: 0 -2352px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.numberList-over {
-    background-position: 0 -2380px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.numberList-press {
-    background-position: 0 -2408px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.numberList-disable {
-    background-position: 0 -2436px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.numberList-selected {
-    background-position: 0 -2464px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.numberList-selected-over {
-    background-position: 0 -2492px;
-    background-color: #E0E0E0;
-}
-
-/* justifyLeft button */
-
-.ta .themable_widget_ta_toolbar_panel div.justifyLeft {
-    background-position: 0 -2856px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyLeft-over {
-    background-position: 0 -2884px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyLeft-press {
-    background-position: 0 -2912px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyLeft-disable {
-    background-position: 0 -2940px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyLeft-selected {
-    background-position: 0 -2968px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyLeft-selected-over {
-    background-position: 0 -2996px;
-    background-color: #E0E0E0;
-}
-
-/* justifyCenter button */
-
-.ta .themable_widget_ta_toolbar_panel div.justifyCenter {
-    background-position: 0 -3024px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyCenter-over {
-    background-position: 0 -3052px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyCenter-press {
-    background-position: 0 -3080px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyCenter-disable {
-    background-position: 0 -3108px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyCenter-selected {
-    background-position: 0 -3136px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyCenter-selected-over {
-    background-position: 0 -3164px;
-    background-color: #E0E0E0;
-}
-
-/* justifyRight button */
-
-.ta .themable_widget_ta_toolbar_panel div.justifyRight {
-    background-position: 0 -3192px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyRight-over {
-    background-position: 0 -3220px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyRight-press {
-    background-position: 0 -3248px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyRight-disable {
-    background-position: 0 -3276px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyRight-selected {
-    background-position: 0 -3304px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.justifyRight-selected-over {
-    background-position: 0 -3332px;
-    background-color: #E0E0E0;
-}
-
-/* indent button */
-
-.ta .themable_widget_ta_toolbar_panel div.indent {
-    background-position: 0 -2688px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.indent-over {
-    background-position: 0 -2716px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.indent-press {
-    background-position: 0 -2744px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.indent-disable {
-    background-position: 0 -2772px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.indent-selected {
-    background-position: 0 -2800px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.indent-selected-over {
-    background-position: 0 -2828px;
-}
-
-/* outdent button */
-
-.ta .themable_widget_ta_toolbar_panel div.outdent {
-    background-position: 0 -2520px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-over {
-    background-position: 0 -2548px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-press {
-    background-position: 0 -2576px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-disable {
-    background-position: 0 -2604px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-selected {
-    background-position: 0 -2632px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-selected-over {
-    background-position: 0 -2660px;
-}
-
-/* outdent button */
-
-.ta .themable_widget_ta_toolbar_panel div.outdent {
-    background-position: 0 -2520px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-over {
-    background-position: 0 -2548px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-press {
-    background-position: 0 -2576px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-disable {
-    background-position: 0 -2604px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-selected {
-    background-position: 0 -2632px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.outdent-selected-over {
-    background-position: 0 -2660px;
-}
-
-/* dirRightToLeft button */
-
-.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft {
-    background-position: 0 -3528px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-over {
-    background-position: 0 -3556px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-press {
-    background-position: 0 -3584px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-disable {
-    background-position: 0 -3612px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-selected {
-    background-position: 0 -3640px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirRightToLeft-selected-over {
-    background-position: 0 -3668px;
-}
-
-/* dirLeftToRight button */
-
-.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight {
-    background-position: 0 -3360px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-over {
-    background-position: 0 -3388px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-press {
-    background-position: 0 -3416px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-disable {
-    background-position: 0 -3444px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-selected {
-    background-position: 0 -3472px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.dirLeftToRight-selected-over {
-    background-position: 0 -3500px;
-}
-
-/* fontSize style */
-
-.ta .themable_widget_ta_toolbar_panel div.fontSize {
-    background: none;
-    font-size: 1.286rem;
-    text-align: center;
-    /*color: #4c4c4c;*/
-    height: 28px;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.fontSize-over {
-    background: none;
-    /* font-family: PT Sans; */
-    font-size: 1.286rem;
-    text-align: center;
-    color: #4c4c4c;
-    background-color: #D1ECF6;
-    height: 28px;
-    vertical-align: middle;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.fontSize-press {
-    background: none;
-    font-size: 1.286rem;
-    text-align: center;
-    background-color: #eb7a1a;
-    height: 28px;
-    vertical-align: middle;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.fontSize-disable {
-    background: none;
-    font-size: 1.286rem;
-    text-align: center;
-    height: 28px;
-    vertical-align: middle;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.fontSize-selected {
-    background: none;
-    font-size: 1.286rem;
-    text-align: center;
-    height: 28px;
-    vertical-align: middle;
-}
-
-.ta .themable_widget_ta_toolbar_panel div.fontSize-selected-over {
-    background: none;
-    font-size: 1.286rem;
-    text-align: center;
-    height: 28px;
-    vertical-align: middle;
-}
-
-.ta .themable_widget_ta_toolbar_panel td a.colorPicker {
-    display: block;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    margin: 2px;
-    padding: 1px;
-    border: solid 2px #ffffff;
-    -moz-box-shadow: 0 0 0 2px #ffffff;
-    -webkit-box-shadow: 0 0 0 2px #ffffff;
-    box-shadow: 0 0 0 2px #ffffff;
-}
-
-.ta .themable_widget_ta_toolbar_panel td a:hover.colorPicker {
-    display: block;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    margin: 2px;
-    padding: 1px;
-    border: solid 2px #ffffff;
-    -moz-box-shadow: 0 0 0 2px #2DD5FF;
-    -webkit-box-shadow: 0 0 0 2px #2DD5FF;
-    box-shadow: 0 0 0 2px #2DD5FF;
-}
-
-.ta .themable_widget_ta_toolbar_panel td a.currentColorPicker {
-    display: block;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    margin: 2px;
-    padding: 1px;
-    border: solid 2px #ffffff;
-    -moz-box-shadow: 0 0 0 2px #eb7a1a;
-    -webkit-box-shadow: 0 0 0 2px #eb7a1a;
-    box-shadow: 0 0 0 2px #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar_panel td a:hover.currentColorPicker {
-    display: block;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    margin: 2px;
-    padding: 1px;
-    border: solid 2px #ffffff;
-    -moz-box-shadow: 0 0 0 2px #2DD5FF;
-    -webkit-box-shadow: 0 0 0 2px #2DD5FF;
-    box-shadow: 0 0 0 2px #2DD5FF;
-}
-
-/***********************************************************************************************/
-/****************            T O O L B A R   C O N T R O L S            ************************/
-/***********************************************************************************************/
-.ta .themable_widget_ta_toolbar ul {
-    display: block;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-.ta .themable_widget_ta_toolbar ul li {
-    list-style-type: none;
-    float: left;
-    padding: 0;
-    margin: 0px 0px;
-    margin-top: 2px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div {
-    display: block;
-    width: 40px;
-    height: 28px;
-    background: url('../assets/images/textarea/EditorToolbar_sprite.png') no-repeat 0 0;
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-}
-
-/* bold button*/
-.ta .themable_widget_ta_toolbar ul li div.bold {
-    background-position: 0 -504px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.bold-over {
-    background-position: 0 -532px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.bold-press {
-    background-position: 0 -560px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.bold-disable {
-    background-position: 0 -588px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.bold-selected {
-    background-position: 0 -616px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.bold-selected-over {
-    background-position: 0 -644px;
-    background-color: #E0E0E0;
-}
-
-/* italic button*/
-.ta .themable_widget_ta_toolbar ul li div.italic {
-    background-position: 0 -672px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.italic-over {
-    background-position: 0 -700px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.italic-press {
-    background-position: 0 -728px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.italic-disable {
-    background-position: 0 -756px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.italic-selected {
-    background-position: 0 -784px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.italic-selected-over {
-    background-position: 0 -812px;
-    background-color: #E0E0E0;
-}
-
-/* underline button */
-.ta .themable_widget_ta_toolbar ul li div.underline {
-    background-position: 0 -840px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.underline-over {
-    background-position: 0 -868px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.underline-press {
-    background-position: 0 -896px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.underline-disable {
-    background-position: 0 -924px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.underline-selected {
-    background-position: 0 -952px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.underline-selected-over {
-    background-position: 0 -980px;
-    background-color: #E0E0E0;
-}
-
-/* undo button */
-.ta .themable_widget_ta_toolbar ul li div.undo {
-    background-position: 0 -168px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.undo-over {
-    background-position: 0 -196px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.undo-press {
-    background-position: 0 -224px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.undo-disable {
-    background-position: 0 -252px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.undo-selected {
-    background-position: 0 -280px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.undo-selected-over {
-    background-position: 0 -308px;
-    background-color: #E0E0E0;
-}
-
-/* redo button */
-.ta .themable_widget_ta_toolbar ul li div.redo {
-    background-position: 0 -336px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.redo-over {
-    background-position: 0 -364px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.redo-press {
-    background-position: 0 -392px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.redo-disable {
-    background-position: 0 -420px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.redo-selected {
-    background-position: 0 -448px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.redo-selected-over {
-    background-position: 0 -476px;
-    background-color: #E0E0E0;
-}
-
-/* lists button */
-.ta .themable_widget_ta_toolbar ul li div.lists {
-    background-position: 0 -1008px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.lists-over {
-    background-position: 0 -1036px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.lists-press {
-    background-position: 0 -1064px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.lists-disable {
-    background-position: 0 -1092px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.lists-selected {
-    background-position: 0 -1120px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.lists-selected-over {
-    background-position: 0 -1148px;
-    background-color: #E0E0E0;
-}
-
-/* aligns button */
-.ta .themable_widget_ta_toolbar ul li div.aligns {
-    background-position: 0 -1344px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.aligns-over {
-    background-position: 0 -1372px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.aligns-press {
-    background-position: 0 -1400px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.aligns-disable {
-    background-position: 0 -1428px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.aligns-selected {
-    background-position: 0 -1456px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.aligns-selected-over {
-    background-position: 0 -1484px;
-    background-color: #E0E0E0;
-}
-
-/* indents button */
-.ta .themable_widget_ta_toolbar ul li div.indents {
-    background-position: 0 -1176px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.indents-over {
-    background-position: 0 -1204px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.indents-press {
-    background-position: 0 -1232px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.indents-disable {
-    background-position: 0 -1260px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.indents-selected {
-    background-position: 0 -1288px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.indents-selected-over {
-    background-position: 0 -1316px;
-    background-color: #E0E0E0;
-}
-
-/* dirs button */
-.ta .themable_widget_ta_toolbar ul li div.dirs {
-    background-position: 0 -1512px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.dirs-over {
-    background-position: 0 -1540px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.dirs-press {
-    background-position: 0 -1568px;
-    background-color: #eb7a1a;
-}
-
-/*.ta .themable_widget_ta_toolbar ul li div.dirs-disable {*/
-    /*background-position: 0 -1596px;*/
-/*}*/
-
-.ta .themable_widget_ta_toolbar ul li div.dirs-selected {
-    background-position: 0 -1624px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.dirs-selected-over {
-    background-position: 0 -1652px;
-    background-color: #E0E0E0;
-}
-
-/* fontSize button */
-.ta .themable_widget_ta_toolbar ul li div.fontSize {
-    background-position: 0 0;
-    /* font-family: PT Sans; */
-    font-size: 1.286rem;
-    color: #179FD1;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.fontSize-over {
-    background-position: 0 -28px;
-    /* font-family: PT Sans; */
-    font-size: 1.286rem;
-    color: #2DD5FF;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.fontSize-press {
-    background-position: 0 -56px;
-    background-color: #eb7a1a;
-    /* font-family: PT Sans; */
-    font-size: 1.286rem;
-    color: #ffffff;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.fontSize-disable {
-    background-position: 0 -84px;
-    /* font-family: PT Sans; */
-    font-size: 1.286rem;
-    color: #179FD1;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.fontSize-selected {
-    background-position: 0 -112px;
-    /* font-family: PT Sans; */
-    font-size: 1.286rem;
-    color: #179FD1;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.fontSize-selected-over {
-    background-position: 0 -140px;
-    /* font-family: PT Sans; */
-    font-size: 1.286rem;
-    color: #179FD1;
-}
-
-.ta .themable_widget_ta_toolbar ul li div table.fontSizeDisplay {
-    background: none;
-    padding-left: 5px;
-}
-
-/* marker button */
-.ta .themable_widget_ta_toolbar ul li div.marker {
-    background-position: 0 -1848px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.marker-over {
-    background-position: 0 -1876px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.marker-press {
-    background-position: 0 -1904px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.marker-disable {
-    background-position: 0 -1932px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.marker-selected {
-    background-position: 0 -1960px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.marker-selected-over {
-    background-position: 0 -1988px;
-    background-color: #E0E0E0;
-}
-
-/* setColor button */
-.ta .themable_widget_ta_toolbar ul li div.setColor {
-    background-position: 0 -1680px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.setColor-over {
-    background-position: 0 -1708px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.setColor-press {
-    background-position: 0 -1736px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.setColor-disable {
-    background-position: 0 -1764px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.setColor-selected {
-    background-position: 0 -1792px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.setColor-selected-over {
-    background-position: 0 -1820px;
-}
-
-/* setColor button */
-.ta .themable_widget_ta_toolbar ul li div table.setColorDisplay td {
-    width: 2px;
-    height: 13px;
-    background-color: #000000;
-}
-
-.ta .themable_widget_ta_toolbar ul li div table.setColorDisplay {
-    padding-top: 4px;
-    padding-left: 20px;
-}
-
-/* math field button */
-.ta .themable_widget_ta_toolbar ul li div.mf {
-    background-position: 0 -3882px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.mf-over {
-    background-position: 0 -3910px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.mf-press {
-    background-position: 0 -3938px;
-    background-color: #eb7a1a;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.mf-disable {
-    background-position: 0 -3966px;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.mf-selected {
-    background-position: 0 -3994px;
-    background-color: #E0E0E0;
-}
-
-.ta .themable_widget_ta_toolbar ul li div.mf-selected-over {
-    background-position: 0 -4022px;
-    background-color: #E0E0E0;
-}
-
-/*.subAnswer ta, .subAnswer ta iframe {
-    margin-top: 0px !important;
-}*/
-
-/***************************************************************/
-/******************* styles ************************************/
-/***************************************************************/
-.ta .style1 {
-    font-weight: normal;
-    font-style: normal;
-    color: #9F5C1C;
-    text-decoration: none;
-    font-size: 1.357rem;
-    background-color: #FFF;
-}
-
-.ta .style2 {
-    font-weight: normal;
-    font-style: normal;
-    color: #66b6ff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: #FFF;
-}
-
-.ta .style3 {
-    font-weight: normal;
-    font-style: normal;
-    color: #555;
-    text-decoration: none;
-    font-size: 1.214rem;
-    background-color: #FFF;
-}
-
-/* bug fixed : Chrome execCommand()  always applies a font-size from html-css */
-.texteditor.style1 ul li > span,
-.texteditor.style1 ol li > span {
-    font-size: inherit !important; 
-}
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+This is a custom SVG font generated by IcoMoon.
+<iconset id="dtp_7_0_icons" name="dtp_7_0_icons" grid="14"></iconset>
+</metadata>
+<defs>
+<font id="dtp_7_0_icons" horiz-adv-x="448" >
+<font-face units-per-em="448" ascent="384" descent="-64" />
+<missing-glyph horiz-adv-x="448" />
+<glyph class="hidden" unicode="&#xf000;" d="M0,384L 448 -64L0 -64 z" horiz-adv-x="0" />
+<glyph unicode="&#x25;" d="M 138.171,328.437c 41.162,0, 74.667-33.505, 74.667-74.667c0-41.161-33.505-74.666-74.667-74.666
+		c-41.18,0-74.666,33.505-74.666,74.666C 63.505,294.932, 96.992,328.437, 138.171,328.437zM 276.841-63.563 L -0.497-63.563 L -0.497,95.833 C -0.497,131.453 26.61,160.437 59.878,160.437 L 216.466,160.437 C 249.753,160.437 276.841,131.453 276.841,95.833 L 276.841-63.563 ZM 351.508,384.438c 29.459,0, 53.321-23.899, 53.321-53.339c0-29.422-23.862-53.338-53.321-53.338
+		c-29.422,0-53.338,23.916-53.338,53.338C 298.169,360.539, 322.086,384.438, 351.508,384.438zM 396.753,253.77 C 424.88,253.77 447.503,230.31 447.502,201.27 L 447.502-7.563 L 298.168-7.563 L 298.168,119.895 C 298.168,152.963 269.167,179.851 233.328,179.851 L 205.583,179.851 C 228.205,196.713 249.953,224.020 249.953,254.937 L 249.953,253.77 L 396.753,253.77 Z" />
+<glyph unicode="&#x40;" d="M 408.274,384.438 L 282.162,255.703 L 409.93,125.073 L 93.094,125.073 L 93.094,384.438 ZM 37.18,384.438L 74.456,384.438L 74.456-63.563L 37.18-63.563z" />
+<glyph unicode="&#x21;" d="M 358.012,160.437L 139.828-63.563L 89.204-12.029L 257.204,160.437L 89.204,332.922L 139.828,384.438 z" />
+<glyph unicode="&#x23;" d="M 224.375,384.438c 54.031,0, 98-43.95, 98-98c0-54.050-43.969-98-98-98s-98,43.95-98,98
+		C 126.375,340.487, 170.344,384.438, 224.375,384.438zM 410.75-63.563 L 38-63.563 L 38,75.599 C 38,122.357 73.546,160.437 117.242,160.437 L 331.508,160.437 C 375.203,160.437 410.75,122.357 410.75,75.599 L 410.75-63.563 Z" />
+<glyph unicode="&#x24;" d="M 223.617,384.438L 292.796,236.891L 447.617,213.293L 335.617,98.605L 361.921-63.563L 223.617,12.909L 85.312-63.563L 111.617,98.605L-0.383,213.293L 154.492,236.891 	z" />
+<glyph unicode="&#xe000;" d="M 149.334,160c0,41.32, 33.346,74.666, 74.666,74.666s 74.666-33.346, 74.666-74.666
+	s-33.346-74.666-74.666-74.666S 149.334,118.681, 149.334,160z" />
+<glyph unicode="&#xf0ca;" d="M 96,32q0-20 -14-34t-34-14t-34,14t-14,34t 14,34t 34,14t 34-14t 14-34zM 96,160q0-20 -14-34t-34-14t-34,14t-14,34t 14,34t 34,14t 34-14t 14-34zM 448,56l0-48 q0-3.25 -2.375-5.625t-5.625-2.375l-304,0 q-3.25,0 -5.625,2.375t-2.375,5.625l0,48 q0,3.25 2.375,5.625 t 5.625,2.375l 304,0 q 3.25,0 5.625-2.375t 2.375-5.625zM 96,288q0-20 -14-34t-34-14t-34,14t-14,34t 14,34t 34,14t 34-14t 14-34zM 448,184l0-48 q0-3.25 -2.375-5.625t-5.625-2.375l-304,0 q-3.25,0 -5.625,2.375t-2.375,5.625l0,48 q0,3.25 2.375,5.625t 5.625,2.375l 304,0 q 3.25,0 5.625-2.375t 2.375-5.625z M 448,312l0-48 q0-3.25 -2.375-5.625t-5.625-2.375l-304,0 q-3.25,0 -5.625,2.375t-2.375,5.625l0,48 q0,3.25 2.375,5.625t 5.625,2.375l 304,0 q 3.25,0 5.625-2.375t 2.375-5.625z"  />
+<glyph unicode="&#xf0b1;" d="M 160,288l 128,0 l0,32 l-128,0 l0-32 zM 448,128l0-120 q0-16.5 -11.75-28.25t-28.25-11.75l-368,0 q-16.5,0 -28.25,11.75t-11.75,28.25l0,120 l 168,0 l0-40 q0-6.5 4.75-11.25t 11.25-4.75l 80,0 q 6.5,0 11.25,4.75t 4.75,11.25l0,40 l 168,0 zM 256,128l0-32 l-64,0 l0,32 l 64,0 zM 448,248l0-96 l-448,0 l0,96 q0,16.5 11.75,28.25t 28.25,11.75l 88,0 l0,40 q0,10 7,17 t 17,7l 144,0 q 10,0 17-7t 7-17l0-40 l 88,0 q 16.5,0 28.25-11.75t 11.75-28.25z"  />
+<glyph unicode="&#xf0ae;" d="M 256,32l 160,0 l0,32 l-160,0 l0-32 zM 160,160l 256,0 l0,32 l-256,0 l0-32 zM 320,288l 96,0 l0,32 l-96,0 l0-32 zM 448,80l0-64 q0-6.5 -4.75-11.25t-11.25-4.75l-416,0 q-6.5,0 -11.25,4.75t-4.75,11.25l0,64 q0,6.5 4.75,11.25t 11.25,4.75l 416,0 q 6.5,0 11.25-4.75t 4.75-11.25zM 448,208l0-64 q0-6.5 -4.75-11.25t-11.25-4.75l-416,0 q-6.5,0 -11.25,4.75 t-4.75,11.25l0,64 q0,6.5 4.75,11.25t 11.25,4.75l 416,0 q 6.5,0 11.25-4.75t 4.75-11.25zM 448,336l0-64 q0-6.5 -4.75-11.25t-11.25-4.75l-416,0 q-6.5,0 -11.25,4.75t-4.75,11.25l0,64 q0,6.5 4.75,11.25t 11.25,4.75l 416,0 q 6.5,0 11.25-4.75t 4.75-11.25z"  />
+<glyph unicode="&#xf097;" d="M 288,320l-256,0 l0-310.5 l 105.75,101.5l 22.25,21.25l 22.25-21.25l 105.75-101.5l0,310.5 zM 291,352q 5.75,0 11-2.25q 8.25-3.25 13.125-10.25t 4.875-15.5l0-322.25 q0-8.5 -4.875-15.5t-13.125-10.25q-4.75-2 -11-2q-12,0 -20.75,8l-110.25,106l-110.25-106q-9-8.25 -20.75-8.25q-5.75,0 -11,2.25q-8.25,3.25 -13.125,10.25t-4.875,15.5l0,322.25  q0,8.5 4.875,15.5t 13.125,10.25q 5.25,2.25 11,2.25l 262,0 z" horiz-adv-x="320"  />
+<glyph unicode="&#xf0ce;" d="M 128,40l0,48 q0,3.5 -2.25,5.75t-5.75,2.25l-80,0 q-3.5,0 -5.75-2.25t-2.25-5.75l0-48 q0-3.5 2.25-5.75t 5.75-2.25l 80,0 q 3.5,0 5.75,2.25t 2.25,5.75zM 128,136l0,48 q0,3.5 -2.25,5.75t-5.75,2.25l-80,0 q-3.5,0 -5.75-2.25t-2.25-5.75l0-48 q0-3.5 2.25-5.75t 5.75-2.25l 80,0 q 3.5,0 5.75,2.25t 2.25,5.75zM 256,40l0,48 q0,3.5 -2.25,5.75t-5.75,2.25l-80,0 q-3.5,0 -5.75-2.25t-2.25-5.75 l0-48 q0-3.5 2.25-5.75t 5.75-2.25l 80,0 q 3.5,0 5.75,2.25t 2.25,5.75zM 128,232l0,48 q0,3.5 -2.25,5.75t-5.75,2.25l-80,0 q-3.5,0 -5.75-2.25t-2.25-5.75l0-48 q0-3.5 2.25-5.75t 5.75-2.25l 80,0 q 3.5,0 5.75,2.25t 2.25,5.75zM 256,136l0,48 q0,3.5 -2.25,5.75t-5.75,2.25l-80,0 q-3.5,0 -5.75-2.25t-2.25-5.75l0-48 q0-3.5 2.25-5.75t 5.75-2.25l 80,0 q 3.5,0 5.75,2.25t 2.25,5.75zM 384,40l0,48  q0,3.5 -2.25,5.75t-5.75,2.25l-80,0 q-3.5,0 -5.75-2.25t-2.25-5.75l0-48 q0-3.5 2.25-5.75t 5.75-2.25l 80,0 q 3.5,0 5.75,2.25t 2.25,5.75zM 256,232l0,48 q0,3.5 -2.25,5.75t-5.75,2.25l-80,0 q-3.5,0 -5.75-2.25t-2.25-5.75l0-48 q0-3.5 2.25-5.75t 5.75-2.25l 80,0 q 3.5,0 5.75,2.25t 2.25,5.75zM 384,136l0,48 q0,3.5 -2.25,5.75t-5.75,2.25l-80,0 q-3.5,0 -5.75-2.25t-2.25-5.75l0-48  q0-3.5 2.25-5.75t 5.75-2.25l 80,0 q 3.5,0 5.75,2.25t 2.25,5.75zM 384,232l0,48 q0,3.5 -2.25,5.75t-5.75,2.25l-80,0 q-3.5,0 -5.75-2.25t-2.25-5.75l0-48 q0-3.5 2.25-5.75t 5.75-2.25l 80,0 q 3.5,0 5.75,2.25t 2.25,5.75zM 416,312l0-272 q0-16.5 -11.75-28.25t-28.25-11.75l-336,0 q-16.5,0 -28.25,11.75t-11.75,28.25l0,272 q0,16.5 11.75,28.25t 28.25,11.75l 336,0 q 16.5,0 28.25-11.75t 11.75-28.25 z" horiz-adv-x="416"  />
+<glyph unicode="&#xe001;" d="M 196,384L0,384 l0-448 l 336,0 L 336,244.028 L 196,384z M 166.852,216L 166.852,328 l 112-112L 166.852,216 z" horiz-adv-x="336"  />
+<glyph unicode="&#xe004;" d="M 242.102,169.912l-39.606,39.606l-56-56c-27.342-27.342-27.342-71.666,0-98.994c 27.342-27.342, 71.652-27.342, 98.994,0l 141.708,138.306
+	c 43.722,43.736, 43.722,114.632,0,158.382c-43.75,43.736-114.66,43.736-158.382,0L 73.122,198.892c-60.144-60.13-60.144-157.64,0-217.798
+	c 60.144-60.144, 157.654-60.144, 217.784,0l 84,84L 335.3,104.7l-0.14-0.14l-83.846-83.86c-38.262-38.248-100.324-38.248-138.6,0
+	c-38.262,38.248-38.262,100.324,0,138.586L 268.408,311.62c 21.868,21.868, 57.33,21.868, 79.184,0c 21.882-21.882, 21.882-57.358,0-79.198l-141.694-138.306
+	c-5.474-5.474-14.322-5.474-19.796,0s-5.474,14.322,0,19.796L 242.102,169.912z"  />
+<glyph unicode="&#xe005;" d="M 403.411,339.172l-358.4,0 c-24.64,0-44.8-20.16-44.8-44.8l0-268.8 c0-24.64, 20.16-44.8, 44.8-44.8l 358.4,0 c 24.64,0, 44.8,20.16, 44.8,44.8l0,268.8 
+		C 448.211,319.012, 428.051,339.172, 403.411,339.172z M 403.411,25.572l-358.4,0 l0,268.8 l 358.4,0 L 403.411,25.572 z M 201.81,112.932l-112,0 l0-40.32 l 112,0 
+		L 201.81,112.932 z M 201.81,180.132l-112,0 l0-40.32 l 112,0 L 201.81,180.132 z M 201.81,247.332l-112,0 l0-40.32 l 112,0 L 201.81,247.332 z M 356.371,103.972
+		c0,0-38.076,9.964-38.076,29.52c0,18.641, 24.636,26.481, 24.636,64.561c0,30.926-9.395,49.28-40.32,49.28s-40.32-18.355-40.32-49.28
+		c0-38.080, 24.633-45.92, 24.633-64.561c0-19.554-38.073-29.52-38.073-29.52c-2.24,0-2.24-31.36-2.24-31.36l 112,0 
+		C 358.611,72.612, 358.611,103.972, 356.371,103.972z"  />
+<glyph unicode="&#xe006;" d="M0,216L 448,216L 448-64L0-64zM 252,272L 448,272L 392,384L 252,384 		zM 196,384L 56,384L0,272L 196,272 		z"  />
+<glyph unicode="&#xe007;" d="M 196,384L0,384 l0-448 l 336,0 L 336,244.028 L 196,384z M 56-8L 56,328 l 112,0 l0-112 l 112,0 l0-224 L 56-8 z" horiz-adv-x="336"  />
+<glyph unicode="&#xe008;" d="M 439.796,375.796c-10.934,10.934-28.826,10.934-39.76,0l-56.98-57.036C 319.704,334.286, 292.908,342, 266,342
+			c-35.826,0-71.638-13.678-98.98-41.020l-84-84c-47.908-47.852-53.816-121.842-17.822-176.148l-56.98-57.036c-10.934-10.934-10.934-28.658,0-39.592
+			C 13.678-61.27, 20.832-64, 28-64s 14.322,2.73, 19.796,8.204l 56.98,57.036C 128.128-14.286, 155.092-22, 182-22c 35.826,0, 71.638,13.678, 98.98,41.020
+			l 83.832,84c 47.908,47.852, 53.816,121.842, 17.822,176.148l 57.148,57.036C 450.73,347.138, 450.73,364.862, 439.796,375.796z M 349.832,202
+			c0-22.428-8.75-43.526-24.612-59.388l-83.832-84C 225.526,42.75, 204.428,34, 182,34c-12.684,0-24.822,3.122-35.98,8.428l 41.776,41.776
+			c 10.934,10.934, 10.934,28.658,0,39.592s-28.658,10.934-39.592,0L 106.428,82.020C 101.066,93.122, 98,105.26, 98,118c0,22.428, 8.75,43.526, 24.612,59.388
+			l 84,84C 222.474,277.25, 243.572,286, 266,286c 12.684,0, 24.78-3.122, 35.924-8.428l-42.602-42.658c-10.934-10.934-10.934-28.658,0-39.592
+			c 5.474-5.474, 12.628-8.204, 19.796-8.204c 7.112,0, 14.28,2.73, 19.74,8.204l 42.546,42.658C 346.78,226.878, 349.832,214.74, 349.832,202z"  />
+<glyph unicode="&#xe009;" d="M 112,48L 112,160L 168,216L 224,160L 336,272L 448,160L 448,48 		zM 56-8L 56,384L0,328L0-8L0-64L 56-64L 392-64L 448-8 		z"  />
+<glyph unicode="&#xf02e;" d="M 291,352q 5.75,0 11-2.25q 8.25-3.25 13.125-10.25t 4.875-15.5l0-322.25 q0-8.5 -4.875-15.5t-13.125-10.25q-4.75-2 -11-2q-12,0 -20.75,8l-110.25,106l-110.25-106q-9-8.25 -20.75-8.25q-5.75,0 -11,2.25q-8.25,3.25 -13.125,10.25t-4.875,15.5l0,322.25 q0,8.5 4.875,15.5t 13.125,10.25q 5.25,2.25 11,2.25l 262,0 z" horiz-adv-x="320"  />
+<glyph unicode="&#xf0b2;" d="M 320.75,248.75l-88.75-88.75l 88.75-88.75l 36,36q 7.25,7.75 17.5,3.5q 9.75-4.25 9.75-14.75l0-112 q0-6.5 -4.75-11.25t-11.25-4.75l-112,0 q-10.5,0 -14.75,10q-4.25,9.75 3.5,17.25l 36,36l-88.75,88.75l-88.75-88.75l 36-36q 7.75-7.5 3.5-17.25q-4.25-10 -14.75-10l-112,0 q-6.5,0 -11.25,4.75t-4.75,11.25l0,112 q0,10.5 10,14.75q 9.75,4.25 17.25-3.5l 36-36 l 88.75,88.75l-88.75,88.75l-36-36q-4.75-4.75 -11.25-4.75q-3,0 -6,1.25q-10,4.25 -10,14.75l0,112 q0,6.5 4.75,11.25t 11.25,4.75l 112,0 q 10.5,0 14.75-10q 4.25-9.75 -3.5-17.25l-36-36l 88.75-88.75l 88.75,88.75l-36,36q-7.75,7.5 -3.5,17.25q 4.25,10 14.75,10l 112,0 q 6.5,0 11.25-4.75t 4.75-11.25l0-112 q0-10.5 -9.75-14.75q-3.25-1.25 -6.25-1.25q-6.5,0 -11.25,4.75z " horiz-adv-x="384"  />
+<glyph unicode="&#xe00a;" d="M 383.802,234.528L 337.985,360.76c-3.384,9.318-13.31,14.252-22.155,11.025L 11.249,260.632
+		C 2.398,257.405-2.040,247.226, 1.344,237.91l 48.311-133.098L 49.655,176.159 c0,32.183, 25.736,58.369, 57.361,58.369l 80.479,0 L 283.483,301.904
+		l 55.545-67.375L 383.802,234.529 z M 431.144,194.125l-324.128,0 c-9.418,0-17.059-8.046-17.059-17.966l0-211.030 
+		c0-9.915, 7.64-17.959, 17.059-17.959l 324.128,0 c 9.426,0, 17.066,8.042, 17.066,17.959L 448.211,176.159 
+		C 448.211,186.079, 440.569,194.125, 431.144,194.125z M 406.409-7.927L 137.729-7.927 L 137.729,30.559 l 41.335,96.212l 62.006-76.975
+		l 58.17,59.63l 74.791,26.988l 32.378-72.174L 406.409-7.927 z"  />
+<glyph unicode="&#xe00b;" d="M 224,384L0,160l 56,0 l0-224 l 336,0 L 392,160 l 56,0 L 224,384z M 336-8l-84,0 l0,84 l-56,0 l0-84 L 112-8 L 112,192.816 L 224,272l 112-79.184L 336-8 z"  />
+<glyph unicode="&#xe00c;" d="M 28,160c 15.47,0, 28-12.53, 28-28l0-112 c0-15.47-12.53-28-28-28L0-8 l0-56 l 224,0 l0,56 l-27.888,0 C 180.684-8, 168,4.53, 168,20l-0.056,196L0,216 
+			l0-56 L 28,160 zM 56,328A56,56 1620 1 1 168,328A56,56 1620 1 1 56,328z" horiz-adv-x="224"  />
+<glyph unicode="&#xe00d;" d="M 391.678,272l-55.286,0 L 392,327.776L 337.036,384l-77.924,0 l 55.832-55.776L 257.74,272l-66.122,0 l 56.826,55.776L 192.276,384L 113.092,384 
+		l 55.776-55.776L 111.678,272L 55.566,272 l 56.868,55.776L 56.224,384L0,384 l0-448 l 448,0 L 448,384 l-54.908,0 L 448,328L 391.678,272z M 392-8L 56-8 l0,56 l 336,0 L 392-8 z M 392,104L 56,104 l0,56 l 336,0 L 392,104 z"  />
+<glyph unicode="&#xe00e;" d="M 224,328C 100.296,328,0,162.184,0,162.184S 100.296-8, 224-8s 224,170.184, 224,170.184S 347.704,328, 224,328z M 224,48
+			c-61.852,0-112,50.148-112,112s 50.148,112, 112,112s 112-50.148, 112-112S 285.852,48, 224,48zM 168,160A56,56 1620 1 1 280,160A56,56 1620 1 1 168,160z"  />
+<glyph unicode="&#xf023;" d="M 176,128q0,13.25 -9.375,22.625t-22.625,9.375t-22.625-9.375t-9.375-22.625q0-9.25 4.75-16.75t 12.75-11.75l-17.25-57.25q-1.25-3.75 1.25-7t 6.5-3.25l 48,0 q 4,0 6.5,3.25t 1.25,7l-17.25,57.25q 8,4.25 12.75,11.75t 4.75,16.75zM 80,192l 128,0 l0,48 q0,26.5 -18.75,45.25t-45.25,18.75t-45.25-18.75t-18.75-45.25l0-48 zM 288,168l0-144 q0-10 -7-17 t-17-7l-240,0 q-10,0 -17,7t-7,17l0,144 q0,10 7,17t 17,7l 8,0 l0,48 q0,46 33,79t 79,33t 79-33t 33-79l0-48 l 8,0 q 10,0 17-7t 7-17z" horiz-adv-x="288"  />
+<glyph unicode="&#xe011;" d="M 420,42.428L 302.316,160L 420,277.572L 341.572,356L 224,238.372L 106.372,356L 28,277.572L 145.572,160L 28,42.428L 106.372-36L 224,81.628L 341.572-36 		z"  />
+<glyph unicode="&#xe012;" d="M 84,216L0,132L 168-36L 448,244L 364,328L 168,132 z"  />
+<glyph unicode="&#xe013;" d="M 224,384C 100.296,384,0,283.704,0,160s 100.296-224, 224-224s 224,100.296, 224,224S 347.704,384, 224,384z M 189.28,56.638
+		L 86.212,159.72l 39.592,39.592l 63.462-63.49l 134.638,134.638l 39.592-39.592L 189.28,56.638z"  />
+<glyph unicode="&#xe014;" d="M 224,384C 100.296,384,0,283.704,0,160s 100.296-224, 224-224s 224,100.296, 224,224S 347.704,384, 224,384z M 334.796,88.796
+		l-39.592-39.592L 224,120.408l-71.204-71.204l-39.592,39.592L 184.408,160l-71.204,71.204l 39.592,39.592L 224,199.592l 71.204,71.204l 39.592-39.592
+		L 263.592,160L 334.796,88.796z"  />
+<glyph unicode="&#xe015;" d="M 224,384C 100.296,384,0,283.704,0,160s 100.296-224, 224-224s 224,100.296, 224,224S 347.704,384, 224,384z M 336,132l-84,0 l0-84 l-56,0 l0,84 L 112,132 l0,56 l 84,0 
+		L 196,272 l 56,0 l0-84 l 84,0 L 336,132 z"  />
+<glyph unicode="&#xe016;" d="M 448,216L 280,216L 280,384L 168,384L 168,216L0,216L0,104L 168,104L 168-64L 280-64L 280,104L 448,104 	z"  />
+<glyph unicode="&#xe017;" d="M0,216L 448,216L 448,104L0,104z"  />
+<glyph unicode="&#xe018;" d="M 224,384C 100.296,384,0,283.704,0,160s 100.296-224, 224-224s 224,100.296, 224,224S 347.704,384, 224,384z M 336,132L 112,132 l0,56 l 224,0 L 336,132 z"  />
+<glyph unicode="&#xe019;" d="M 280,160l0-56 l 66.332,0 l-75.194-75.194c-47.446-47.544-130.326-47.544-177.814,0l-39.62-39.536
+		C 88.018-45.086, 133.714-64, 182.28-64c 48.594,0, 94.178,18.928, 128.45,53.27l 81.27,81.2L 392-8 l 56,0 L 448,160 L 280,160 zM 168,216L 101.668,216 l 75.194,75.194c 47.446,47.544, 130.326,47.544, 177.814,0l 39.62,39.536C 359.982,365.072, 314.286,384, 265.706,384
+		c-48.594,0-94.178-18.928-128.45-53.27L 56,249.53L 56,328 L0,328 l0-168 l 168,0 L 168,216 z"  />
+<glyph unicode="&#xe01a;" d="M 336.211,30.052l-291.2,0 l0,201.6 l 58.124,0 c0,0, 15.445,20.090, 48.608,44.8L 22.611,276.452 c-12.373,0-22.4-10.027-22.4-22.4l0-246.4 
+		c0-12.376, 10.027-22.4, 22.4-22.4l 336,0 c 12.373,0, 22.4,10.024, 22.4,22.4l0,83.919 l-44.8-36.844L 336.211,30.052 z M 299.519,185.735l0-79.524 l 148.69,116.497
+		L 299.519,334.692l0-70.122 c-180.59,0-180.59-178.517-180.59-178.517C 170.038,170.014, 201.495,185.735, 299.519,185.735z"  />
+<glyph unicode="&#xe01b;" d="M 415.184,351.184C 393.372,373.066, 364.714,384, 336,384c-28.658,0-57.316-10.934-79.184-32.816L 0.434,94.816L0-64
+		l 158.368,0 l 256.816,256.816C 458.934,236.566, 458.934,307.434, 415.184,351.184z M 135.184-8L 112-8 l0,56 L 56.322,48 l 0.056,23.52L 296.408,311.592l0,0l 79.184-79.184
+		l0,0L 135.184-8z"  />
+<glyph unicode="&#xf09c;" d="M 176,40q0,1.5 -3.75,14.25t-8.75,28.875t-5,16.375q 8,4 12.75,11.75t 4.75,16.75q0,13.25 -9.375,22.625t-22.625,9.375t-22.625-9.375t-9.375-22.625q0-9 4.75-16.625t 12.75-11.875q0-0.5 -5-16.5t-8.75-28.75t-3.75-14.25q0-3.25 2.375-5.625t 5.625-2.375l 48,0 q 3.25,0 5.625,2.375t 2.375,5.625zM 416,240l0-64 q0-6.5 -4.75-11.25t-11.25-4.75 l-16,0 q-6.5,0 -11.25,4.75t-4.75,11.25l0,64 q0,26.5 -18.75,45.25t-45.25,18.75t-45.25-18.75t-18.75-45.25l0-48 l 24,0 q 10,0 17-7t 7-17l0-144 q0-10 -7-17t-17-7l-240,0 q-10,0 -17,7t-7,17l0,144 q0,10 7,17t 17,7l 168,0 l0,48 q0,46.25 32.875,79.125t 79.125,32.875t 79.125-32.875t 32.875-79.125z" horiz-adv-x="416"  />
+<glyph unicode="&#xe01c;" d="M 342.475,370L 102.42,370 C 75.871,370, 55.844,347.446, 55.844,320.996l0-335.314 c0-26.449, 20.027-49.681, 46.575-49.681
+			L 342.475-63.999 c 26.567,0, 49.681,21.681, 49.681,48.128L 392.156,324.101 C 392.156,350.551, 369.042,370, 342.475,370z M 350.365-22.209L 97.634-22.209 L 97.634,329.087 
+			l 252.731,0 L 350.365-22.209 zM 154.539,202.148l 139.798,0 c 7.755,0, 14.101,6.3, 14.101,14s-6.345,14-14.101,14L 154.539,230.148 
+			c-7.755,0-14.101-6.3-14.101-14S 146.784,202.148, 154.539,202.148zM 154.539,132.369l 139.798,0 c 7.755,0, 14.101,6.3, 14.101,14s-6.345,14-14.101,14L 154.539,160.369 
+			c-7.755,0-14.101-6.3-14.101-14S 146.784,132.369, 154.539,132.369zM 154.539,62.369l 139.798,0 c 7.755,0, 14.101,6.3, 14.101,14s-6.345,14-14.101,14L 154.539,90.369 
+			c-7.755,0-14.101-6.3-14.101-14S 146.784,62.369, 154.539,62.369z"  />
+<glyph unicode="&#xf040;" d="M 90.75,0l 22.75,22.75l-58.75,58.75l-22.75-22.75l0-26.75 l 32,0 l0-32 l 26.75,0 zM 221.5,232q0,5.5 -5.5,5.5q-2.5,0 -4.25-1.75l-135.5-135.5q-1.75-1.75 -1.75-4.25q0-5.5 5.5-5.5q 2.5,0 4.25,1.75l 135.5,135.5q 1.75,1.75 1.75,4.25zM 208,280l 104-104l-208-208l-104,0 l0,104 zM 378.75,256q0-13.25 -9.25-22.5l-41.5-41.5l-104,104l 41.5,41.25q 9,9.5 22.5,9.5 q 13.25,0 22.75-9.5l 58.75-58.5q 9.25-9.75 9.25-22.75z" horiz-adv-x="384"  />
+<glyph unicode="&#xf108;" d="M 448,136l0,208 q0,3.25 -2.375,5.625t-5.625,2.375l-400,0 q-3.25,0 -5.625-2.375t-2.375-5.625l0-208 q0-3.25 2.375-5.625t 5.625-2.375l 400,0 q 3.25,0 5.625,2.375t 2.375,5.625zM 480,344l0-272 q0-16.5 -11.75-28.25t-28.25-11.75l-136,0 q0-9.25 4-19.375t 8-17.75t 4-10.875q0-6.5 -4.75-11.25t-11.25-4.75l-128,0 q-6.5,0 -11.25,4.75 t-4.75,11.25q0,3.5 4,11t 8,17.5t 4,19.5l-136,0 q-16.5,0 -28.25,11.75t-11.75,28.25l0,272 q0,16.5 11.75,28.25t 28.25,11.75l 400,0 q 16.5,0 28.25-11.75t 11.75-28.25z" horiz-adv-x="480"  />
+<glyph unicode="&#xe01d;" d="M 393.555,166.307L 307.822,166.32L 307.839,323.492L 138.652,323.492L 138.652,166.307L 53.074,166.32L 223.328-3.548 
+			z"  />
+<glyph unicode="&#xe01e;" d="M 393.555,153.638L 307.822,153.616L 307.839-3.548L 138.656-3.548L 138.656,153.638L 53.074,153.616L 223.332,323.492 	z"  />
+<glyph unicode="&#xf0d9;" d="M 160,272l0-224 q0-6.5 -4.75-11.25t-11.25-4.75t-11.25,4.75l-112,112q-4.75,4.75 -4.75,11.25t 4.75,11.25l 112,112q 4.75,4.75 11.25,4.75t 11.25-4.75t 4.75-11.25z" horiz-adv-x="160"  />
+<glyph unicode="&#xf0da;" d="M 144,160q0-6.5 -4.75-11.25l-112-112q-4.75-4.75 -11.25-4.75t-11.25,4.75t-4.75,11.25l0,224 q0,6.5 4.75,11.25t 11.25,4.75t 11.25-4.75l 112-112q 4.75-4.75 4.75-11.25z" horiz-adv-x="160"  />
+<glyph unicode="&#xf014;" d="M 128,200l0-144 q0-3.5 -2.25-5.75t-5.75-2.25l-16,0 q-3.5,0 -5.75,2.25t-2.25,5.75l0,144 q0,3.5 2.25,5.75t 5.75,2.25l 16,0 q 3.5,0 5.75-2.25t 2.25-5.75zM 192,200l0-144 q0-3.5 -2.25-5.75t-5.75-2.25l-16,0 q-3.5,0 -5.75,2.25t-2.25,5.75l0,144 q0,3.5 2.25,5.75t 5.75,2.25l 16,0 q 3.5,0 5.75-2.25t 2.25-5.75zM 256,200l0-144 q0-3.5 -2.25-5.75t-5.75-2.25l-16,0 q-3.5,0 -5.75,2.25t-2.25,5.75l0,144  q0,3.5 2.25,5.75t 5.75,2.25l 16,0 q 3.5,0 5.75-2.25t 2.25-5.75zM 288,19l0,237 l-224,0 l0-237 q0-5.5 1.75-10.125t 3.625-6.75t 2.625-2.125l 208,0 q 0.75,0 2.625,2.125t 3.625,6.75t 1.75,10.125zM 120,288l 112,0 l-12,29.25q-1.75,2.25 -4.25,2.75l-79.25,0 q-2.5-0.5 -4.25-2.75zM 352,280l0-16 q0-3.5 -2.25-5.75t-5.75-2.25l-24,0 l0-237 q0-20.75 -11.75-35.875t-28.25-15.125l-208,0  q-16.5,0 -28.25,14.625t-11.75,35.375l0,238 l-24,0 q-3.5,0 -5.75,2.25t-2.25,5.75l0,16 q0,3.5 2.25,5.75t 5.75,2.25l 77.25,0 l 17.5,41.75q 3.75,9.25 13.5,15.75t 19.75,6.5l 80,0 q 10,0 19.75-6.5t 13.5-15.75l 17.5-41.75l 77.25,0 q 3.5,0 5.75-2.25t 2.25-5.75z" horiz-adv-x="352"  />
+<glyph unicode="&#xe01f;" d="M 428.313,164.974c0,9.094-7.38,16.463-16.481,16.463L 178.793,181.437 c-9.102,0-16.481-7.371-16.481-16.463l0-9.073 
+			c0-9.093, 7.379-16.462, 16.481-16.462l 233.038,0 c 9.102,0, 16.481,7.371, 16.481,16.462L 428.313,164.974 zM 122.063,164.974c0,9.094-7.38,16.463-16.481,16.463l-69.414,0 c-9.102,0-16.481-7.371-16.481-16.463l0-9.073 
+			c0-9.093, 7.379-16.462, 16.481-16.462l 69.414,0 c 9.101,0, 16.481,7.371, 16.481,16.462L 122.063,164.974 zM 428.313,51.105c0,9.094-7.38,16.463-16.481,16.463L 178.793,67.568 c-9.102,0-16.481-7.371-16.481-16.463l0-9.073 
+			c0-9.093, 7.379-16.462, 16.481-16.462l 233.038,0 c 9.102,0, 16.481,7.371, 16.481,16.462L 428.313,51.105 zM 122.063,51.105c0,9.094-7.38,16.463-16.481,16.463l-69.414,0 c-9.102,0-16.481-7.371-16.481-16.463l0-9.073 
+			c0-9.093, 7.379-16.462, 16.481-16.462l 69.414,0 c 9.101,0, 16.481,7.371, 16.481,16.462L 122.063,51.105 zM 428.313,277.849c0,9.094-7.38,16.463-16.481,16.463L 178.793,294.312 c-9.102,0-16.481-7.371-16.481-16.463l0-9.073 
+			c0-9.093, 7.379-16.462, 16.481-16.462l 233.038,0 c 9.102,0, 16.481,7.371, 16.481,16.462L 428.313,277.849 zM 122.063,277.849c0,9.094-7.38,16.463-16.481,16.463l-69.414,0 c-9.102,0-16.481-7.371-16.481-16.463l0-9.073 
+			c0-9.093, 7.379-16.462, 16.481-16.462l 69.414,0 c 9.101,0, 16.481,7.371, 16.481,16.462L 122.063,277.849 z"  />
+<glyph unicode="&#xe020;" d="M 159.294,116.482c0,14.165, 7.249,25.677, 16.096,25.677c 8.95,0, 16.090-11.511, 16.090-25.677
+		c0-14.176-7.14-25.583-16.090-25.583C 166.542,90.899, 159.294,102.306, 159.294,116.482z M 394.726,100.276
+		c-4.882-1.717-9.867-2.571-14.551-3.028C 356.289,35.517, 296.556-8.438, 226.66-8.438c-90.92,0-164.887,74.105-164.887,165.199
+		c0,7.376, 0.493,14.639, 1.432,21.762C 73.498,259.614, 142.74,322.312, 226.625,322.312c 76.598,0, 140.979-52.278, 159.426-123.099
+		c 1.145-3.349, 2.064-7.659, 2.992-14.004c 0.786-4.654, 1.381-9.373, 1.768-14.151c 0.786-7.050, 1.663-15.663, 2.739-26.341
+		C 398.234,98.163, 432.675,113.381, 394.726,100.276z M 79.431,153.923c 0.917-37.963, 16.133-73.517, 43.081-100.463
+		c 27.81-27.809, 64.785-43.125, 104.114-43.125c 39.33,0, 76.304,15.316, 104.114,43.125c 12.762,12.762, 22.884,27.457, 30.11,43.422
+		c-13.301,0.392-26.77,1.916-39.564,4.352c-11.031,2.061-21.679,5.36-31.848,9.649c-1.623-11.46-8.056-19.984-15.789-19.984
+		c-8.837,0-16.091,11.407-16.091,25.583c0,4.153, 0.675,8.025, 1.791,11.511c-10.545,7.973-19.948,17.548-27.796,28.768
+		c-19.38,27.884-28.654,52.373-38.739,80.673C 168.52,200.514, 131.555,162.714, 79.431,153.923z"  />
+<glyph unicode="&#xe021;" d="M 206.056,96.592c0-13.989-7.37-25.32-16.348-25.32c-9.082,0-16.452,11.329-16.452,25.32
+		c0,13.99, 7.37,25.215, 16.452,25.215C 198.687,121.808, 206.056,110.584, 206.056,96.592z M 429.331,68.29
+		c0-28.419-23.726-51.601-53.103-51.601c-16.050,0-30.362,6.957-40.042,17.871C 307.072,8.612, 268.694-7.166, 226.625-7.166
+		c-39.053,0-74.924,13.598-103.159,36.305c-9.322-7.725-21.354-12.45-34.493-12.45C 59.594,16.689, 35.875,39.87, 35.875,68.29
+		c0,20.941, 13.010,38.833, 31.537,46.859c-2.959,11.133-4.784,22.727-5.338,34.654c-0.225,3.354-0.347,6.733-0.347,10.141
+		c0,54.205, 27.402,102.3, 69.442,131.908c 0.068,0.048, 0.136,0.096, 0.203,0.144c 0.591,0.415, 1.184,0.827, 1.781,1.235
+		c 16.009,11.051, 34.066,19.342, 53.491,24.185c 13.604,3.479, 27.877,5.34, 42.589,5.34c 13.781,0, 27.104-1.805, 39.915-4.868
+		c 28.939-5.737, 55.815-20.615, 76.995-41.563c 1.228-1.159, 2.397-2.363, 3.587-3.558c 0.48-0.5, 0.94-0.997, 1.397-1.502
+		c 20.971-21.675, 36.014-48.814, 42.296-79.069c 2.034-5.33, 4.674-12.206, 8.48-22.023c0,0, 7.19-23.432, 38.486-12.979
+		c0,0-5.56-21.136-27.25-29.9c-7.094-2.441-14.126-4.016-21.094-4.977c-0.385-1.553-0.813-3.098-1.233-4.643
+		C 413.003,111.48, 429.331,91.825, 429.331,68.29z M 216,227.397c-16.95-42.664-54.532-82.53-136.555-73.882
+		c 1.017-37.81, 16.215-73.205, 43.067-100.056c 27.81-27.809, 64.785-43.125, 104.114-43.125c 39.33,0, 76.304,15.316, 104.114,43.125
+		c 19.112,19.112, 32.322,42.551, 38.716,68.109C 305.374,125.974, 249.205,184.192, 216,227.397z M 289.596,71.273
+		c 9.076,0, 16.338,11.329, 16.338,25.32c0,13.99-7.262,25.215-16.338,25.215s-16.337-11.224-16.337-25.215
+		C 273.259,82.603, 280.52,71.273, 289.596,71.273z"  />
+<glyph unicode="&#xe022;" d="M 438.432,26.742L 264.145,333.861c-22.418,38.843-58.015,38.226-79.060-1.393L 8.497,28.137
+		C-12.568-11.483, 6.904-43.875, 51.76-43.875l 345.899,0 C 442.514-43.875, 460.85-12.1, 438.432,26.742zM 223.605,17.322c-17.012,0-30.92,13.841-30.92,30.902c0,17.095, 13.908,30.92, 30.92,30.92
+		c 17.111,0, 30.952-13.825, 30.952-30.92C 254.557,31.163, 240.716,17.322, 223.605,17.322zM 247.813,136.419c-0.618-9.606-8.998-17.464-18.623-17.464l-10.381,0 c-9.625,0-18.005,7.858-18.623,17.464
+		l-5.63,87.572c-0.618,9.606, 6.752,17.464, 16.377,17.464l 26.131,0 c 9.625,0, 16.995-7.858, 16.377-17.464L 247.813,136.419z"  />
+<glyph unicode="&#xe023;" d="M 394.577,342.642L 53.424,342.642 C 23.677,342.642-0.438,316.63-0.438,284.544l0-188.304 c0-32.087, 24.115-58.098, 53.861-58.098l 120.315,0 
+		l-26.732-26.733c-6.436-6.436-6.442-16.865-0.012-23.295l 6.415-6.415c 6.429-6.429, 16.86-6.424, 23.295,0.012L 224,29.006
+		l 47.295-47.296c 6.436-6.436, 16.865-6.441, 23.295-0.012l 6.415,6.415c 6.429,6.43, 6.424,16.86-0.013,23.295l-26.732,26.733l 120.315,0 
+		c 29.747,0, 53.861,26.012, 53.861,58.098L 448.438,284.544 C 448.438,316.63, 424.323,342.642, 394.577,342.642z M 407.313,127.421
+		c0-25.628-19.261-46.404-43.019-46.404L 83.707,81.017 c-23.759,0-43.019,20.776-43.019,46.404L 40.688,255.987 c0,25.629, 19.261,46.404, 43.019,46.404
+		l 280.586,0 c 23.759,0, 43.019-20.776, 43.019-46.404L 407.313,127.421 z"  />
+<glyph unicode="&#xe024;" d="M 296.188,134.673l-9.654-10.216c-5.336-5.633-14.235-5.933-19.851-0.578l-40.915,38.527l-38.545-40.88
+		c-5.336-5.652-14.218-5.933-19.869-0.613l-10.232,9.636c-5.635,5.318-5.916,14.2-0.58,19.852l 38.545,40.914l-40.897,38.562
+		c-5.669,5.301-5.933,14.182-0.614,19.834l 9.636,10.251c 5.318,5.652, 14.218,5.897, 19.851,0.597l 40.914-38.561l 38.545,40.914
+		c 5.336,5.651, 14.252,5.933, 19.869,0.597l 10.232-9.619c 5.652-5.336, 5.915-14.235, 0.579-19.887l-38.545-40.914l 40.897-38.545
+		C 301.226,149.224, 301.49,140.324, 296.188,134.673z M 449.313-17.901c0,9.093-7.379,16.463-16.481,16.463L 16.043-1.438 
+		C 6.941-1.438-0.438-8.808-0.438-17.901l0-9.073 c0-9.093, 7.379-16.463, 16.481-16.463l 416.789,0 c 9.102,0, 16.481,7.371, 16.481,16.463
+		L 449.313-17.901 z M 449.313,87.049c0-27.123-20.385-49.111-45.53-49.111L 45.092,37.937 C 19.947,37.937-0.438,59.925-0.438,87.049L-0.438,294.201 
+		C-0.438,321.325, 19.947,343.312, 45.092,343.312l 358.691,0 c 25.145,0, 45.53-21.988, 45.53-49.111L 449.313,87.049 z M 406.438,267.424
+		c0,19.683-14.792,35.639-33.040,35.639L 73.728,303.062 c-18.247,0-33.040-15.957-33.040-35.639l0-152.722 c0-19.683, 14.793-35.639, 33.040-35.639l 299.67,0 
+		c 18.247,0, 33.040,15.956, 33.040,35.639L 406.438,267.424 z"  />
+<glyph unicode="&#xe025;" d="M 305.813-51.364c0-7.22-5.852-13.072-13.071-13.072L 73.883-64.437 c-7.219,0-13.071,5.853-13.071,13.072L 60.813,248.865 
+		c0,7.22, 5.852,13.072, 13.071,13.072l 218.859,0 c 7.219,0, 13.071-5.853, 13.071-13.072L 305.813-51.364 zM 353.555,322.75L 135.571,322.75 C 128.352,322.75, 122.5,316.897, 122.5,309.678L 122.5,281.625 l 189.93,0 c 7.219,0, 13.071-5.853, 13.071-13.072L 325.501-3.625 l 28.055,0 
+		c 7.219,0, 13.071,5.853, 13.071,13.072L 366.627,309.678 C 366.625,316.897, 360.774,322.75, 353.555,322.75zM 414.805,384L 195.946,384 C 188.727,384, 182.875,378.147, 182.875,370.928L 182.875,342.875 l 190.805,0 C 380.899,342.875, 386.75,337.022, 386.75,329.803L 386.75,58.5 l 28.055,0 
+		c 7.219,0, 13.071,5.853, 13.071,13.072L 427.876,370.928 C 427.875,378.147, 422.024,384, 414.805,384z"  />
+<glyph unicode="&#xe026;" d="M 364.65,173.984l0-14.223 c0-15.715-12.733-28.453-28.441-28.453l-14.248,0 c-15.707,0-28.44,12.738-28.44,28.453l0,14.223 
+		c0,15.714, 12.733,28.453, 28.44,28.453l 14.248,0 C 351.918,202.437, 364.65,189.698, 364.65,173.984z M 223.857,202.437l-14.249,0 
+		c-15.706,0-28.44-12.739-28.44-28.453l0-14.223 c0-15.715, 12.734-28.453, 28.44-28.453l 14.249,0 c 15.708,0, 28.44,12.738, 28.44,28.453
+		l0,14.223 C 252.297,189.698, 239.565,202.437, 223.857,202.437z M 112.106,202.437l-14.249,0 c-15.707,0-28.44-12.739-28.44-28.453l0-14.223 
+		c0-15.715, 12.733-28.453, 28.44-28.453l 14.249,0 c 15.707,0, 28.44,12.738, 28.44,28.453l0,14.223 
+		C 140.546,189.698, 127.813,202.437, 112.106,202.437z"  />
+<glyph unicode="&#xe027;" d="M 394.577,363.437L 53.424,363.437 C 23.677,363.437-0.438,337.426-0.438,305.339l0-293.303 c0-32.087, 24.115-58.098, 53.861-58.098l 341.153,0 
+		c 29.747,0, 53.861,26.012, 53.861,58.098L 448.438,305.339 C 448.438,337.426, 424.323,363.437, 394.577,363.437z M 407.313,43.216
+		c0-25.628-19.261-46.404-43.019-46.404L 83.707-3.188 c-23.759,0-43.019,20.776-43.019,46.404L 40.688,276.784 c0,25.629, 19.261,46.404, 43.019,46.404
+		l 280.586,0 c 23.759,0, 43.019-20.776, 43.019-46.404L 407.313,43.216 zM 201.093,172.66c-7.99-5.367-10.135-16.296-4.767-24.285l 24.076-35.836c 5.368-7.99, 3.223-18.918-4.767-24.286
+		l-4.754-3.194c-7.989-5.367-18.918-3.223-24.285,4.767l-24.076,35.836c-5.367,7.99-16.296,10.135-24.286,4.767l-4.989-3.351
+		c-7.99-5.368-16.245-2.074-18.346,7.319L 85.593,265.422c-2.101,9.392, 2.645,12.582, 10.547,7.086l 110.222-76.661
+		c 7.901-5.496, 7.83-14.384-0.16-19.751L 201.093,172.66z"  />
+<glyph unicode="&#xe002;" d="M 418.726,139.794L 348.208,307.62c-5.586,11.19-20.373,20.353-32.864,20.353L 269.011,327.972 l 8.96-91.046l 60.48,0 l-114.24-94.735
+		l-114.24,94.735l 60.48,0 l 8.96,91.046l-46.337,0 c-12.491,0-27.279-9.162-32.864-20.353L 29.694,139.794c-5.59-11.2-8.477-30.468-6.426-42.815
+		l 15.239-82.554c 2.058-12.348, 13.951-22.452, 26.443-22.452l 318.517,0 c 12.491,0, 24.388,10.104, 26.443,22.452l 15.239,82.554
+		C 427.199,109.327, 424.312,128.594, 418.726,139.794z M 388.203,78.684l-5.802-32.304c-1.736-12.401-13.374-22.54-25.861-22.54
+		L 91.879,23.839 c-12.485,0-24.126,10.139-25.861,22.54l-5.8,32.304c-1.732,12.397, 7.066,22.54, 19.554,22.54l 288.872,0 
+		C 381.136,101.224, 389.935,91.081, 388.203,78.684z"  />
+<glyph unicode="&#xe003;" d="M 35.913,265.577c 10.937-5.88, 162.361-87.22, 167.996-90.247c 5.639-3.028, 12.939-4.49, 20.3-4.49
+		c 7.357,0, 14.659,1.463, 20.3,4.49c 5.635,3.028, 157.059,84.367, 167.993,90.247c 10.945,5.87, 21.301,24.315, 1.197,24.315L 34.72,289.891 
+		C 14.63,289.892, 24.972,271.447, 35.913,265.577z M 417.137,220.777c-12.425-6.486-165.018-86.279-172.627-90.251
+		c-7.612-3.973-12.943-4.49-20.3-4.49c-7.361,0-12.687,0.518-20.3,4.49C 196.301,134.499, 43.715,214.292, 31.279,220.777
+		c-8.746,4.557-8.67-0.794-8.67-4.918c0-4.13,0-164.329,0-164.329c0-9.39, 12.509-21.48, 22.215-21.48l 358.767,0 
+		c 9.709,0, 22.218,12.089, 22.218,21.48c0,0,0,160.199,0,164.329C 425.811,219.984, 425.894,225.335, 417.137,220.777z"  />
+<glyph unicode="&#xe00f;" d="M 383.796,39.796L 319.592,104L 280,64.408L 344.204,0.204L 280-64L 448-64L 448,104 		zM 168,384L0,384L0,216L 64.204,280.204L 127.806,216.658L 167.398,256.25L 103.796,319.796 		zM 168,64.408L 128.408,104L 64.204,39.796L0,104L0-64L 168-64L 103.796,0.204 		zM 448,384L 280,384L 344.204,319.796L 280.602,256.25L 320.194,216.658L 383.796,280.204L 448,216 		z"  />
+<glyph unicode="&#xe010;" d="M 283.528,160.056l 156.436-156.492c 10.836-10.836, 10.724-28.476-0.252-39.424l-19.852-19.852
+	c-10.976-10.976-28.616-11.088-39.424-0.252L 224,100.5l-156.408-156.464c-10.836-10.836-28.476-10.724-39.452,0.252l-19.824,19.852
+	c-10.976,10.976-11.088,28.588-0.252,39.424l 156.408,156.492L 8.176,316.38C-2.66,327.216-2.548,344.884, 8.4,355.832l 19.824,19.852
+	C 39.2,386.66, 56.868,386.772, 67.676,375.964L 224,219.584l 156.324,156.38c 10.808,10.808, 28.476,10.696, 39.424-0.28L 439.6,355.832
+	c 10.976-10.976, 11.088-28.616, 0.252-39.452L 283.528,160.056z"  />
+<glyph unicode="&#xf04b;" d="M 346,152.25l-332-184.5q-5.75-3.25 -9.875-0.75t-4.125,9l0,368 q0,6.5 4.125,9t 9.875-0.75l 332-184.5q 5.75-3.25 5.75-7.75t-5.75-7.75z" horiz-adv-x="352"  />
+<glyph unicode="&#xe028;" d="M 194.381,180.694l0-60.681 l-48.825,0 l 78.62-79.056l 79.296,79.056L 253.969,120.013 l0,60.681 L 194.381,180.694 z
+		 M 40.6,264.17l0-298.813 c0-16.363, 13.443-29.794, 29.794-29.794l 307.563,0 c 16.352,0, 29.794,13.431, 29.794,29.794L 407.75,353.769 
+		c0,16.363-13.442,29.794-29.794,29.794l-217.963,0 L 40.6,264.17z M 183.75,343.138l 167.697,0 c 8.291,0, 15.005-6.716, 15.005-15.006l0-336.266 
+		c0-8.291-6.716-15.005-15.005-15.005L 96.906-23.139 c-8.291,0-15.006,6.716-15.006,15.005L 81.9,241.287 L 183.75,241.287 L 183.75,343.138 z"  />
+<glyph unicode="&#xe029;" d="M 189.512,232.319c-25.533,0-46.317,20.783-46.317,46.315s 20.784,46.315, 46.317,46.315c 25.542,0, 46.313-20.783, 46.313-46.315
+		S 215.054,232.319, 189.512,232.319z M 112.252,344.552c0,20.411-16.606,37.026-37.025,37.026c-20.414,0-37.027-16.615-37.027-37.026
+		s 16.614-37.026, 37.027-37.026C 95.647,307.526, 112.252,324.141, 112.252,344.552z M 202.67,61.448L 202.67-64 l 245.591,0 L 448.262,61.448 
+		c0,31.543-24.006,57.211-53.465,57.211L 256.133,118.659 C 226.656,118.659, 202.67,92.991, 202.67,61.448z M0,256.803L0,159.265 l 75.879,0 
+		l0,15.431 c0,33.942, 24.459,62.009, 55.922,66.008c-7.926,11.708-12.567,25.813-12.567,40.985c0,3.818, 0.295,7.567, 0.86,11.229L 33.751,292.919 
+		C 15.143,292.919,0,276.715,0,256.803z M 98.629,172.946l0-124.507 l 81.291,0 l0,13.009 c0,44.091, 34.189,79.961, 76.213,79.961l 7.354,0 
+		c-15.011,15.525-24.267,36.649-24.267,59.9c0,5.256, 0.474,10.405, 1.379,15.403l-101.071,0 
+		C 116.977,216.712, 98.629,197.077, 98.629,172.946z M 391.586,201.309c0,36.449-29.655,66.119-66.119,66.119
+		c-36.45,0-66.12-29.67-66.12-66.119c0-36.45, 29.67-66.12, 66.12-66.12C 361.932,135.189, 391.586,164.858, 391.586,201.309z"  />
+<glyph unicode="&#xe02a;" d="M 394.468,384L 53.532,384 C 23.967,384,0,360.104,0,330.625l0-341.25 c0-29.478, 23.967-53.375, 53.532-53.375l 251.923,0 L 325.938-64 L 448,58.44l0,20.107 l0,3.5 L 448,330.625 
+		C 448,360.104, 424.034,384, 394.468,384z M 407.75,78.545L 305.455,78.545 L 305.455-23.75 L 53.532-23.75 C 46.209-23.75, 40.25-17.862, 40.25-10.625L 40.25,330.625 c0,7.237, 5.959,13.125, 13.282,13.125
+		l 340.936,0 c 7.324,0, 13.282-5.888, 13.282-13.125L 407.75,78.545 z M 244.364,180.364l 61.090,0 l0-40.728 l-61.090,0 l0-61.090 l-40.728,0 l0,61.091 l-61.091,0 l0,40.727 
+		l 61.091,0 l0,61.091 l 40.728,0 L 244.364,180.364 z"  />
+<glyph unicode="&#xe02b;" d="M 394.468,384L 53.532,384 C 23.967,384,0,360.104,0,330.625l0-341.25 c0-29.478, 23.967-53.375, 53.532-53.375l 251.923,0 L 325.938-64 L 448,58.44l0,20.107 l0,3.5 L 448,330.625 
+		C 448,360.104, 424.034,384, 394.468,384z M 407.75,78.545L 305.455,78.545 L 305.455-23.75 L 53.532-23.75 C 46.209-23.75, 40.25-17.862, 40.25-10.625L 40.25,330.625 c0,7.237, 5.959,13.125, 13.282,13.125
+		l 340.936,0 c 7.324,0, 13.282-5.888, 13.282-13.125L 407.75,78.545 z"  />
+<glyph unicode="&#xe02c;" d="M 162.568,78.625l 122.863,0 L 285.431,221.033 L 364,221.033 L 224,363.875L 84,221.033l 78.568,0 L 162.568,78.625 z M 406.875,119.75l0-102.375 L 41.125,17.375 L 41.125,119.75 L0,119.75 l0-147.875 l 448,0 L 448,119.75 L 406.875,119.75 z"  />
+<glyph unicode="&#xe02d;" d="M 224,300c0,0-56,56-224,56l0-336 c 169.75,0, 224-56, 224-56s 54.25,56, 224,56L 448,356 C 280,356, 224,300, 224,300z M 56,300
+		c 71.176-5.964, 114.842-22.428, 140-35.77l0-225.526 c-25.158,13.286-68.824,29.75-140,35.77L 56,300 z M 392,74.474c-71.204-6.020-114.842-22.456-140-35.77
+		L 252,264.23 C 277.158,277.572, 320.796,294.036, 392,300L 392,74.474 z"  />
+<glyph unicode="&#xe02e;" d="M 56,328L 392,328L 392-8L 56-8z"  />
+<glyph unicode="&#xe02f;" d="M 56,328L 196,328L 196-8L 56-8zM 252,328L 392,328L 392-8L 252-8z"  />
+<glyph unicode="&#xe032;" d="M 124.522-60.381c-29.452,0-57.015,12.495-76.923,32.403C 9.030,10.592-1.722,77.921, 52.352,131.996
+		c 31.682,31.682, 158.592,158.588, 221.942,221.945c 22.488,22.491, 51.118,31.171, 78.522,23.832
+		c 26.915-7.21, 48.975-29.26, 56.185-56.176c 7.339-27.419-1.34-56.039-23.828-78.526L 172.928,30.822
+		c-12.12-12.12-25.806-19.295-39.567-20.748c-13.625-1.434-26.635,2.958-35.735,12.057
+		c-16.513,16.503-18.865,47.575, 8.582,75.015l 149.083,149.086c 6.125,6.125, 16.047,6.125, 22.172,0
+		c 6.125-6.118, 6.125-16.051,0-22.172L 128.38,74.97c-12.887-12.88-14.070-25.179-8.582-30.667
+		c 2.404-2.408, 6.055-3.493, 10.262-3.045c 6.457,0.682, 13.807,4.858, 20.696,11.732l 212.247,212.254
+		c 14.56,14.564, 20.142,31.692, 15.708,48.233c-4.368,16.292-17.709,29.634-34.002,34.002c-16.537,4.434-33.67-1.148-48.241-15.711
+		C 233.118,268.412, 106.207,141.498, 74.526,109.824c-41.353-41.353-31.447-88.928-4.752-115.632
+		c 26.698-26.695, 74.27-36.599, 115.632,4.752l 221.942,221.945c 6.125,6.125, 16.047,6.125, 22.172,0
+		c 6.125-6.121, 6.125-16.051,0-22.172L 207.578-23.228C 181.415-49.391, 152.138-60.381, 124.522-60.381z"  />
+<glyph unicode="&#xe031;" d="M 237.971,299.274L 237.971,313.535 l 13.81,0 c 7.7,0, 14,6.3, 14,14s-6.3,14-14,14l-56,0 c-7.7,0-14-6.3-14-14s 6.3-14, 14-14
+			l 14.19,0 L 209.971,299.317 c-63.25-6.88-112.48-60.456-112.48-125.536c0-69.748, 56.542-126.29, 126.29-126.29
+			c 69.748,0, 126.29,56.543, 126.29,126.29C 350.072,238.732, 301.038,292.221, 237.971,299.274z M 224.216,72.829
+			c-55.8,0-101.033,45.232-101.033,101.033s 45.231,101.032, 101.033,101.032c 55.8,0, 101.033-45.232, 101.033-101.032
+			S 280.017,72.829, 224.216,72.829zM 210.942,188.31c-10.465-7.345-21.679-22.838-9.014-35.502c 9.895-9.895, 22.928-9.351, 35.296,7.067
+			c 8.292,11.209, 43.201,69.564, 42.747,70.152C 279.389,230.78, 250.912,215.982, 210.942,188.31z"  />
+<glyph unicode="&#xe030;" d="M 245.311,300.295c-9.74,0-18.027-3.398-24.748-10.323c-6.876-6.933-10.314-15.131-10.314-24.895
+			c0-9.612, 3.438-17.953, 10.314-25.025c 6.722-6.934, 15.009-10.469, 24.748-10.469c 9.741,0, 18.041,3.535, 24.75,10.469
+			c 6.874,7.072, 10.313,15.413, 10.313,25.025c0,9.764-3.439,17.962-10.313,24.895C 263.352,296.897, 255.053,300.295, 245.311,300.295zM 293.356,107.877c-14.451-15.409-25.080-25.216-31.751-29.697c-6.809-4.623-10.83-6.867-17.362-6.867
+			c-3.542,0-6.656,1.683-9.203,5.048c-2.561,3.223-3.697,7.421-3.697,12.462c0,10.505, 1.036,34.396, 20.871,103.172l-56.112,10.642
+			c-24.249-60.508-27.679-92.243-27.679-126.556c0-15.833, 3.682-28.856, 11.197-39.36c 7.515-10.504, 16.582-15.689, 27.502-15.689
+			c 19.405,0, 46.399,19.751, 86.233,59.112L 293.355,107.877 L 293.356,107.877z"  />
+<glyph unicode="&#xe033;" d="M 308.796,293.14c-0.158-2.083-0.33-1.597-0.33,0.165
+		c-9.943,0-136.28-9.943-141.565-163.060c 1.597-7.704, 28.144,101.17, 141.669,123.617l-0.123-45.295l 99.126,63.732
+		L 308.39,332.694c0,0-0.079-32.177, 0.077-39.389C 309.267,293.305, 309.422,293.14, 308.796,293.14z M 120.92,130.982
+		c-0.321-3.509-0.321-5.607-0.321-5.607C 120.599,127.473, 120.755,129.071, 120.92,130.982z M 363.397,33.727L 83.685,33.713l0,252.507 
+		l 98.362-0.226l 69.125,42.199L 81.689,328.193 c-22.125,0-40.086-19.893-40.086-42.018l0-255.165 c0-22.126, 20.175-41.952, 42.301-41.952l 279.577,0 
+		c 22.126,0, 41.995,19.949, 41.995,42.075L 405.476,210.363 l-41.937-29.986L 363.397,33.727z"  />
+<glyph unicode="&#xe037;" d="M 392.014,327.971L 56.129,328.056c-27.94,0-42.15-14.011-42.15-41.759l-0.095-224.101c0-28.138, 14.516-42.253, 42.245-42.253
+		l 336.044-0.095c 28.035,0, 41.894,14.704, 41.894,42.644l 0.137,227.68C 433.981,313.67, 420.020,328.056, 392.014,327.971z M 391.941,286.109
+		L 223.932,160.006L 56.102,286.184L 391.941,286.109z M 56.219,62.038l-0.168,182.594L 223.912,118.834l 168.187,125.038l-0.086-181.999
+		L 56.219,62.038z"  />
+<glyph unicode="&#xe034;" d="M0,59.93L0,370 l 448,0 l0-310.070 L 280.292,59.93 L 168.146-50L 168.146,59.957 L0,59.93z"  />
+<glyph unicode="&#xe035;" d="M 350.254,62.219l-84.363,0 l-83.781-83.781l0,83.781 L 97.746,62.219 c-12.436,0-24.763,6.218-36.982,18.654S 42.438,105.855, 42.438,118.509
+		L 42.438,285.272 c0,12.654, 6.109,25.2, 18.327,37.636S 85.31,341.562, 97.746,341.562l 252.507,0 c 12.436,0, 24.763-6.218, 36.982-18.654
+		s 18.327-24.981, 18.327-37.636l0-166.763 c0-12.654-6.108-25.2-18.327-37.636S 362.69,62.219, 350.254,62.219z M 363.807,299.807L 84.031,299.807 
+		l-0.143-195.864l 279.919,0.033L 363.807,299.807 z"  />
+<glyph unicode="&#xe036;" d="M 227.812,300.295c-67.465,0-122.188-54.723-122.188-122.188c0-33.445, 13.5-63.686, 35.286-85.775l-0.375-71.324
+		l 58.501,38.7c 9.278-2.286, 18.817-3.789, 28.776-3.789c 67.465,0, 122.188,54.722, 122.188,122.188
+		C 349.999,245.571, 295.277,300.295, 227.812,300.295z"  />
+<glyph unicode="&#xe039;" d="M 154.169,48.647l 17.774,13.398l-45.898,45.898l-13.399-17.773l0-27.898 l 13.625,0 l0-13.625 L 154.169,48.647 z M 256.317,225.518
+		c0,2.866-1.434,4.297-4.296,4.297c-1.302,0-2.411-0.455-3.321-1.368l-105.859-105.858c-0.912-0.913-1.366-2.019-1.366-3.321
+		c0-2.864, 1.431-4.295, 4.295-4.295c 1.303,0, 2.408,0.456, 3.321,1.366l 105.858,105.858
+		C 255.86,223.11, 256.317,224.217, 256.317,225.518z M 245.768,263.018l 81.251-81.247L 164.521,19.271L 83.271,19.271 l0,81.249 
+		L 245.768,263.018z M 379.166,244.269c0-6.902-2.409-12.761-7.228-17.579l-32.421-32.421l-81.247,81.249l 32.42,32.226
+		c 4.688,4.946, 10.546,7.422, 17.578,7.422c 6.9,0, 12.828-2.475, 17.773-7.422l 45.898-45.702
+		C 376.757,256.964, 379.166,251.039, 379.166,244.269z"  />
+<glyph unicode="&#xe038;" d="M 182.004,187.284L 126.198,187.284L 224.001,75.681L 321.802,187.284L 266.583,187.284L 266.583,286.122L 182.004,286.122 	zM 349.806,103.949L 349.806,34.024L 98.194,34.024L 98.194,103.949L 55.927,103.949L 55.927-8.402L 392.074-8.402L 392.074,103.949 	z"  />
+<glyph unicode="&#xe03a;" d="M 371.752,299.919L 155.023,299.919 c-11.011,0-25.267-7.327-31.652-16.297L 46.529,176.089c-6.385-8.969-6.385-23.642,0-32.613
+		l 76.841-107.533c 6.386-8.99, 20.641-16.316, 31.652-16.316L 371.752,19.626 c 11.013,0, 20.021,9.009, 20.021,20.021L 391.773,279.899 
+		C 391.773,290.91, 382.765,299.919, 371.752,299.919z M 332.447,87.172l-7.41-7.41c-4.098-4.097-10.682-4.139-14.716-0.094
+		l-58.395,58.405l-58.384-58.405c-4.045-4.045-10.63-4.002-14.727,0.094l-7.4,7.41c-4.098,4.098-4.139,10.671-0.094,14.716
+		l 58.384,58.416l-58.342,58.352c-4.045,4.045-4.003,10.64, 0.083,14.727l 7.4,7.41c 4.098,4.097, 10.693,4.138, 14.727,0.104
+		l 58.352-58.374l 58.353,58.374c 4.034,4.034, 10.629,3.993, 14.716-0.104l 7.411-7.41c 4.097-4.098, 4.138-10.682, 0.093-14.727
+		l-58.352-58.352l 58.395-58.416C 336.585,97.844, 336.543,91.258, 332.447,87.172z"  />
+<glyph unicode="&#x20;" horiz-adv-x="224" />
+</font></defs></svg>

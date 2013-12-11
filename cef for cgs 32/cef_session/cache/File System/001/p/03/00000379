@@ -1,0 +1,16 @@
+{
+    "guid":"83e38345-3f28-453d-9cdd-7a5a2402f3fb",
+    "version":"1.025",
+    "publisher":"T2K",
+    "name":"Number Line",
+    "description":"Number line..",
+    "releaseNotes":"Manifest changes",
+	"type":"widget",
+    "releaseDate":"2013-08-12T113:26:00.000Z",
+	"thumbnail": "images/icon.png",
+	"tags": [
+		"math",
+		"fractions",
+        "axis-x"
+	]
+}

@@ -101,7 +101,7 @@ int APIENTRY wWinMain(HINSTANCE hInstance,
 
   setCachPath(settings);
 
-  settings.ignore_certificate_errors = true;
+ // settings.ignore_certificate_errors = true;
 
   settings.persist_session_cookies = true;
 

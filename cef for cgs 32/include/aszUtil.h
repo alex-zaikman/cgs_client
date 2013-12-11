@@ -36,6 +36,7 @@ const wchar_t *GetWC(const char *c);
 
 std::string getCurrentWorkingPath();
 
+std::string jsDecriptToInject(void);
 
 
 #endif //aszUtil_h_3123432432425365345426t53652424

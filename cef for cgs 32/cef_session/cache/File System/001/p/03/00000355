@@ -1,0 +1,16 @@
+{
+
+	"direction" : "ltr",
+	"resetConfirmation" : "OK Réinitialiser",
+	"resetQuestion" : "Etes-vous sûr de vouloir réinitialiser le modèle?",
+	"changeNLTypeConfirmation": "Changer le numéro de ligne de type Confirmation",
+    "changeNLTypeQuestion" : "Etes-vous sûr que vous voulez changer le type de numéro de ligne?",
+    "changeTaskTypeConfirmation": "Modifier le type Task Confirmation",
+    "changeTaskTypeQuestion" : "Etes-vous sûr que vous voulez changer le type de tâche?",
+	"reset" : "Réinitialiser modèle",
+	"cancel" : "Résilier",
+	"change":"changer",
+    "from":"à partir",
+    "to":"de",
+    "set":"fixé"
+}

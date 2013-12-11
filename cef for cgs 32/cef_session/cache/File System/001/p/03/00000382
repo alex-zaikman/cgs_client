@@ -1,0 +1,79 @@
+@mixin box
+{
+	display: -webkit-box;
+	display:-ms-flexbox;
+	display:-moz-box;
+	display:box;
+}
+
+@mixin box-align($alignment)
+{
+	@include box;
+	-webkit-box-align: $alignment;
+	-moz-box-align: $alignment;
+	-ms-box-align: $alignment;
+	box-align: $alignment;
+}
+
+@mixin box-pack($alignment)
+{
+	@include box;
+
+	-webkit-box-pack: $alignment;
+	-moz-box-pack: $alignment;
+	-ms-box-pack: $alignment;
+	box-pack: $alignment;
+}
+
+
+@mixin box-vertical
+{
+	@include box;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-ms-box-orient: vertical;
+	box-orient: vertical;
+}
+
+@mixin box-horizontal
+{
+	@include box;
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	-ms-box-orient: horizontal;
+	box-orient: horizontal;
+}
+
+@mixin box-center
+{
+	@include box-align(center);
+	@include box-pack(center);
+}
+
+
+@mixin hint
+{
+	@include box-center;
+
+	position: absolute;
+	width:100%;
+	height:100%;
+	top: 0;
+	left: 0;
+	font-size: 16px;
+}
+
+@mixin perspective($perspective)
+{
+	-webkit-perspective: $perspective;
+	-moz-perspective: $perspective;
+	-ms-perspective: $perspective;
+	perspective: $perspective;
+}
+
+@mixin box-border
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}

@@ -94,7 +94,7 @@
       <ProgramDatabaseFile>$(TargetPath).pdb</ProgramDatabaseFile>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
-      <TargetMachine>MachineX64</TargetMachine>
+      <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <Midl>
       <DllDataFileName>%(Filename).dlldata.c</DllDataFileName>
